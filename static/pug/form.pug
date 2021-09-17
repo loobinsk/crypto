@@ -1,0 +1,80 @@
+extends header.pug
+
+block content
+
+    include breadcrumbs.html
+    main.pages-other
+        section.about-block1
+            .wrapper
+                h1 О CryptoChip
+                .next-page__mob.block-mob
+                    a(href="#")
+                        span О проекте
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 6L14 6L14 8L8 8L8 14L6 14L6 8L-2.62268e-07 8L-3.49691e-07 6L6 6L6 -2.62268e-07L8 -3.49691e-07L8 6Z" fill="#A5E7E3"/>
+                        </svg>
+                    a(href="#")
+                        span География студентов
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 6L14 6L14 8L8 8L8 14L6 14L6 8L-2.62268e-07 8L-3.49691e-07 6L6 6L6 -2.62268e-07L8 -3.49691e-07L8 6Z" fill="#A5E7E3"/>
+                        </svg>
+                    a(href="#")
+                        span Отзывы
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 6L14 6L14 8L8 8L8 14L6 14L6 8L-2.62268e-07 8L-3.49691e-07 6L6 6L6 -2.62268e-07L8 -3.49691e-07L8 6Z" fill="#A5E7E3"/>
+                        </svg>
+                nav.pages-nav
+                    ul
+                        li
+                            a(href="#") О проекте
+                        li
+                            a(href="#") География студентов
+                        li
+                            a(href="#") Отзывы
+                        li.li_active
+                            a(href="#") Контакты
+
+        section.form-block1
+            .wrapper
+                .form-block1__sides
+                    .sides__lft
+                        h2 Свяжитесь с нами
+                        p Вы можете написать нам  по любому интересующему вас вопросу: от обучения до сотрудничеств.
+                        form(action="#")
+                            input(placeholder="Имя" type="type" required)
+                            input(placeholder="Телефон" type="num" required)
+                            input(placeholder="Email" type="email" required)
+                            input(placeholder="Сообщение" type="text" required)
+                            .file
+                                label(for="fl1") Прикрепить файл
+                                input(type="file" id="fl1")
+                            input(type="submit" value="Отправить")
+                            small Нажимая на кнопку Отправить, я соглашаюсь на 
+                                a(href="#")  обработку персональных данных и с правилами пользования Платформы
+                    .sides__rht
+                        .rht__item
+                            .item__title Контактный центр
+                            a(href="tel:00000000000") 0 (000) 000-00-00
+                        .rht__item
+                            .item__title Отдел заботы о студентах
+                            a(href="tel:00000000000") 0 (000) 000-00-00
+                        .rht__item
+                            .item__title Юридический адрес
+                            p 123456, г. Москва, ул. Подвойского, д. 14, стр. 7
+                        .rht__item
+                            .item__title Реквизиты
+                            p Р/С   40702810123450101230 в Московский банк ПАО Сбербанк г. Москва <br />БИК 044521234 <br />К/С   30101234500000000225 <br />ОГРН   1047712345678 <br />ИНН   7712345678 <br />КПП 779101001
+                        .rht__item
+                            .item__title Email
+                            a(href="mailto:cryptochipsup@gmail.com") cryptochipsup@gmail.com
+
+
+        section.next-page
+            .wrapper
+                p Следующий раздел
+                a(href="#").next-page__text О проекте
+
+
+
+
+    include footer.pug

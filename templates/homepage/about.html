@@ -1,0 +1,124 @@
+{% extends 'index.html' %}
+{% load static i18n %}
+
+
+{% block title %}О CryptoChip{% endblock %}
+{% block content %}
+<a id="totopbutton"></a>
+
+<!-- Header end's --><div class="">  <!-- breadcrambs     -->
+
+    <div class="col-md-12 breadcrumbs">
+
+    <a class="breadcrumb-item" href="{% url 'homepage' %}">Home</a><i class="fas fa-chevron-right"></i><a class="breadcrumb-item" href="{% url 'about' %}">{% trans 'About' %}</a>
+     
+    </div>
+
+</div> <!--  breadcrambs end's  -->
+    <main class="pages-other">
+      <section class="about-block1">
+        <div class="wrapper">
+          <h1>{% trans 'О CryptoChip' %}</h1>
+          <div class="next-page__mob block-mob"></div>
+          <nav class="pages-nav">
+            <ul>
+              <li class="li_active"><a href="{% url 'about' %}">О проекте</a></li>
+              <li><a href="{% url 'map' %}">География студентов</a></li>
+              <li><a href="{% url 'reviews' %}">Отзывы</a></li>
+              <li><a href="{% url 'contacts' %}">Контакты</a></li>
+            </ul>
+          </nav>
+          <p>{% trans 'Миссия CryptoChip — дать возможность каждому быть актуальным и востребованным специалистом прямо сейчас. Вне зависимости от возраста и географии.' %}</p>
+          <div class="block1__video"><img src="{% static 'img/about-bl1.png' %}" alt="Photo">
+            <div class="video__text">
+              <div class="video__play"><svg width="17" height="22" viewBox="0 0 17 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 22L17 11L0 0V22Z" fill="#04B8AD"/>
+</svg>
+              </div>
+              <p>{% trans 'Время просмотра — 5 минут' %}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="about-block2">
+        <div class="wrapper">
+          <div class="block2__sides">
+            <div class="sides__lft">
+              <div class="lft__item"><b>{{ course_count }}</b>
+                <p>{% trans 'образовательных программ' %}</p>
+              </div>
+              <div class="lft__item"><b>{{ teacher_count }}</b>
+                <p>{% trans 'преподавателей' %}</p>
+              </div>
+              <div class="lft__item"><b>{{ student_count }}</b>
+                <p>{% trans 'студентов' %}</p>
+              </div>
+            </div>
+            <div class="sides__rht">
+              <p>{% trans 'Миссия CryptoChip — дать возможность каждому быть актуальным и востребованным специалистом прямо сейчас. Вне зависимости от возраста и географии.' %}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="about-block3">
+        <div class="sphere sphere1"><img src="{% static 'img/sphere1.png' %}" alt="Photo" width="190"></div>
+        <div class="sphere sphere2"><img src="{% static 'img/sphere1.png' %}" alt="Photo" width="112"></div>
+        <div class="wrapper">
+          <h2>{% trans 'Как мы учим' %}</h2>
+          <ol>
+            <li>
+              <h3>{% trans 'Учитесь по утрам, вечером после работы или между' %}</h3>
+              <p>{% trans 'Все лекции записаны заранее и круглосуточно доступны в личном кабинете' %}</p>
+            </li>
+            <li>
+              <h3>{% trans 'Все преподаватели CryptoChip — признанные профессионалы в своей области' %}</h3>
+              <p>{% trans 'Все лекции записаны заранее и круглосуточно доступны в личном кабинете' %}</p>
+            </li>
+            <li>
+              <h3>{% trans 'Все задания основаны на реальных кейсах' %}</h3>
+              <p>{% trans 'Домашние задания станут основой вашего портфолио' %}</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+      <section class="about-block4">
+        <div class="wrapper">
+          <h2>Нас уже <span>{{ teacher_count }}</span> и мы работаем <br />для увеличения <span>качества</span> вашего <span>образования</span></h2>
+          <div class="block4__block">
+            <div class="block4__item"><img src="{% static 'img/bl4-1.png' %}" alt="Photo">
+              <h3>Илья Фофанов</h3><small>{% trans 'Основатель и генеральный директор' %}</small>
+            </div>
+            <div class="block4__item"><img src="{% static 'img/bl4-2.png' %}" alt="Photo">
+              <h3>Илья Фофанов</h3><small>{% trans 'Основатель и генеральный директор' %}</small>
+            </div>
+            <div class="block4__item"><img src="{% static 'img/bl4-3.png' %}" alt="Photo">
+              <h3>Илья Фофанов</h3><small>{% trans 'Основатель и генеральный директор' %}</small>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="about-block5">
+        <div class="wrapper">
+          <h2>{{ course_count }} <span>профессий и курсов по разным направлениям. Вы сможете найти то, что подходит вам.</span></h2>
+          <div class="about__slider">
+            <div class="slider__block">{% for category in all_categories_skills %}<a class="slider__item" href="#">{{ category.name }}</a>{% endfor %}</div>
+          </div>
+          {% if course_count > 20 %}
+            <div class="slider__more"><span>{% trans 'See more' %}</span></div>
+          {% endif %}
+          <a href="{% url 'courses_list' %}"><div class="slider__list block-mob">{% trans 'Список курсов' %}</div></a>
+        </div>
+      </section>
+      <section class="next-page">
+        <div class="wrapper">
+          <p>{% trans 'Следующий раздел' %}</p><a class="next-page__text" href="{% url 'map' %}">{% trans 'География студентов' %}</a>
+          <div class="next-page__mob block-mob"><a href="{% url 'map' %}"><span>{% trans 'География студентов' %}</span><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8 6L14 6L14 8L8 8L8 14L6 14L6 8L-2.62268e-07 8L-3.49691e-07 6L6 6L6 -2.62268e-07L8 -3.49691e-07L8 6Z" fill="#A5E7E3"/>
+</svg></a><a href="{% url 'reviews' %}"><span>{% trans 'Отзывы' %}</span><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8 6L14 6L14 8L8 8L8 14L6 14L6 8L-2.62268e-07 8L-3.49691e-07 6L6 6L6 -2.62268e-07L8 -3.49691e-07L8 6Z" fill="#A5E7E3"/>
+</svg></a><a href="{% url 'contacts' %}"><span>{% trans 'Контакты' %}</span><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8 6L14 6L14 8L8 8L8 14L6 14L6 8L-2.62268e-07 8L-3.49691e-07 6L6 6L6 -2.62268e-07L8 -3.49691e-07L8 6Z" fill="#A5E7E3"/>
+</svg></a></div>
+        </div>
+      </section>
+{% endblock %}

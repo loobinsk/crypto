@@ -1,0 +1,289 @@
+{% extends 'index.html' %}
+{% load static i18n %}
+
+
+{% block title %}Курсы{% endblock %}
+{% block content %}
+<a id="totopbutton"></a>
+
+<!-- Header end's -->
+
+
+<!-- main content -->
+
+
+
+
+<div class="container-fluid">
+
+<div class="row">  <!-- breadcrambs     -->
+
+    <div class="col-md-12 breadcrumbs">
+
+    <i class="fas fa-chevron-right"></i><a class="breadcrumb-item" href="{% url 'homepage' %}">{% trans 'Home' %}</a><i class="fas fa-chevron-right"></i><a class="breadcrumb-item" href="{% url 'courses_list' %}">{% trans 'Courses' %}</a>
+     
+    </div>
+
+</div> <!--  breadcrambs end's  -->
+
+
+
+<div class="row">
+  
+  <div class="col-md-2"></div>
+
+  <div class="col-md-9">
+
+    <p class="page-heading">
+      <span>{% trans 'Courses' %}</span>
+      <input type="radio" name="svg11" id="rd1">
+      <label for="rd1">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="3" width="18" height="4" fill="white" fill-opacity="0.25"/>
+          <rect x="3" y="17" width="18" height="4" fill="white" fill-opacity="0.25"/>
+          <rect x="3" y="10" width="18" height="4" fill="white" fill-opacity="0.25"/>
+        </svg>
+      </label>
+      <input type="radio" checked name="svg11" id="rd2">
+      <label for="rd2">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="3" width="8" height="8" fill="#04B8AD"/>
+          <rect x="3" y="13" width="8" height="8" fill="#04B8AD"/>
+          <rect x="13" y="3" width="8" height="8" fill="#04B8AD"/>
+          <rect x="13" y="13" width="8" height="8" fill="#04B8AD"/>
+        </svg>
+      </label>
+    </p>
+  
+  </div>
+
+</div>
+
+
+
+<main class="cd-main-content">
+
+
+  <div class="row">
+    <div class="col-md-2 cd-main-content__block1"></div>
+
+    <div class="col-md-9 cd-main-content__block2">
+
+    <div class="cd-tab-filter-wrapper">
+      <div class="cd-tab-filter">
+        <div class="punk-mob">
+          <div class="punk-mob__item punk-mob__item-filter">{% trans 'Фильтры' %}</div>
+          <div class="punk-mob__item punk-mob__item-sort">{% trans 'Сортировать' %}</div>
+        </div>
+        <ul class="cd-filters">
+          <li class="filter cd-heading">{% trans 'Sort by:' %}</li>
+          <li class="placeholder"> 
+            <a data-type="all" href="#0">{% trans 'All' %}</a> <!-- selected option on mobile -->
+          </li> 
+          <li class="filter"><a class="selected" href="#0">{% trans 'date' %}</a></li>
+          <li class="filter"><a href="">{% trans 'rating' %}</a></li>
+          <li class="filter"><a href="">{% trans 'popularity' %}</a></li>
+
+        </ul> <!-- cd-filters -->
+        <div class="up-down">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M21.2498 12C21.2498 6.892 17.1088 2.75 11.9998 2.75C6.89176 2.75 2.74976 6.892 2.74976 12C2.74976 17.108 6.89176 21.25 11.9998 21.25C17.1088 21.25 21.2498 17.108 21.2498 12Z" stroke="white" stroke-opacity="0.25" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M15.4709 13.4424L11.9999 9.95638L8.52895 13.4424" stroke="white" stroke-opacity="0.25" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.75024 12C2.75024 17.108 6.89124 21.25 12.0002 21.25C17.1082 21.25 21.2502 17.108 21.2502 12C21.2502 6.892 17.1082 2.75 12.0002 2.75C6.89124 2.75 2.75024 6.892 2.75024 12Z" stroke="white" stroke-opacity="0.25" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M8.52905 10.5576L12.0001 14.0436L15.4711 10.5576" stroke="white" stroke-opacity="0.25" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+         <p class="filter cd-number">{% trans 'courses' %}: {{ all_courses.count }}</p>
+
+      </div> <!-- cd-tab-filter -->
+    </div> <!-- cd-tab-filter-wrapper -->
+
+  </div>
+
+</div>
+
+
+
+<div class="row">
+
+    <div class="cd-filter col-md-3"> <!-- sidebar -->
+      <form>
+        <div class="cd-filter-block">
+<!--           <h4>Search</h4> -->
+          
+          <div class="cd-filter-content search-input">
+            <input type="search" placeholder="Try finance...">
+          </div> <!-- cd-filter-content -->
+        </div> <!-- cd-filter-block -->
+
+        <div class="cd-filter-block">
+          <h4>{% trans 'Subject' %}</h4>
+
+          <ul class="cd-filter-content cd-filters list">
+            {% for i in all_categories %}
+            <li>
+              <input class="filter" type="checkbox" id="{{ i.id }}">
+                <label class="checkbox-label" for="{{i.id}}">{{ i.name }}</label>
+            </li>
+            {% endfor %}
+          </ul> <!-- cd-filter-content -->
+        </div> <!-- cd-filter-block -->
+
+        <div class="cd-filter-block">
+          <h4>{% trans 'Subject' %}</h4>
+
+          <ul class="cd-filter-content cd-filters list">
+            {% for i in all_categories %}
+            <li>
+              <input class="filter" type="checkbox" id="{{ i.id }}">
+                <label class="checkbox-label" for="{{i.id}}">{{ i.name }}</label>
+            </li>
+            {% endfor %}
+          </ul> <!-- cd-filter-content -->
+        </div> <!-- cd-filter-block -->
+
+        <div class="cd-filter-block">
+          <h4>{% trans 'Subject' %}</h4>
+
+          <ul class="cd-filter-content cd-filters list">
+            {% for i in all_categories %}
+            <li>
+              <input class="filter" type="checkbox" id="{{ i.id }}">
+                <label class="checkbox-label" for="{{i.id}}">{{ i.name }}</label>
+            </li>
+            {% endfor %}
+          </ul> <!-- cd-filter-content -->
+        </div> <!-- cd-filter-block -->
+
+        <div class="cd-filter-block">
+          <h4>{% trans 'Subject' %}</h4>
+
+          <ul class="cd-filter-content cd-filters list">
+            {% for i in all_categories %}
+            <li>
+              <input class="filter" type="checkbox" id="{{ i.id }}">
+                <label class="checkbox-label" for="{{i.id}}">{{ i.name }}</label>
+            </li>
+            {% endfor %}
+          </ul> <!-- cd-filter-content -->
+        </div> <!-- cd-filter-block -->
+
+        <div class="cd-filter-block">
+          <h4>{% trans 'Difficulty level' %}</h4>
+
+          <ul class="cd-filter-content cd-filters list">
+            <li>
+              <input class="filter" type="radio" name="radioButton" id="radio1" checked>
+              <label class="radio-label" for="radio1">All</label>
+            </li>
+            {% for i in all_categories_by_type %}
+            <li>
+              <input class="filter" type="radio" name="radioButton">
+              <label class="radio-label">{{ i.name }}</label>
+            </li>
+            {% endfor %}
+
+          </ul> <!-- cd-filter-content -->
+        </div> <!-- cd-filter-block -->
+        <input class="outline-btn" type="submit" value="Применить">
+      </form>
+
+      <a href="#0" class="cd-close">Close</a>
+    </div> <!-- cd-filter -->
+
+    <a href="#0" class="cd-filter-trigger">Filters</a>  
+
+
+    <section class="cd-gallery"> <!-- course items -->
+     <div class="col-md-9 course-boxes">
+
+      <ul>
+        
+<!-- course item -->
+        {% for course in all_courses %}
+        <li class="c-box mix color-1 check1 radio2 option3">
+              
+             <span class="c-box_new">New</span> 
+             <span class="c-box_category">{{ course.category_by_skill }}</span>
+
+              <p class="c-box_author"><a href="#">{{ course.author.get_full_name }}</a></p>
+              <p class="c-box_heading"><a href="{{ course.get_absolute_url }}" class="c-box_link">{{ course.name }}</a></p>
+
+              <div class="c-box_bottom">
+           
+              <p class="c-box_price">${{ course.price }}.00</p>
+
+              <p class="c-box_rating">
+            
+              {% if course.get_average_rating != 0 %}
+                {% for star in stars %}
+                  {% if star > course.get_average_rating %}
+                    <i class="fas fa-star disable"></i>
+                  {% else %}
+                    <i class="fas fa-star"></i>
+                  {% endif %}
+                {% endfor %}
+              {% else %}
+                <i class="fas fa-star disable"></i>
+                <i class="fas fa-star disable"></i>
+                <i class="fas fa-star disable"></i>
+                <i class="fas fa-star disable"></i>
+                <i class="fas fa-star disable"></i>
+              {% endif %}
+
+             </p>
+
+             <p class="c-box_hours">{{ course.hourse }} hours</p>
+
+             </div>
+
+        </li>
+        {% endfor %}
+      </ul>
+      <div class="cd-fail-message">No results found</div>
+
+    </div> <!-- course boxes -->
+    <div class="more-courses">
+      More courses
+    </div>
+    </section> <!-- cd-gallery -->
+
+
+
+
+   </div> <!-- row end's -->
+
+  </main> <!-- cd-main-content -->
+
+
+<div class="container">
+    <div class="row home-subscribe">
+      
+     <div class="col-md-6 home-subscribe_left">
+       <p class="subscribe-heading">Subscribe for news</p>
+       <p class="subscribe-desc">Dont miss new updates on your email or our telegram group</p>
+     </div>
+
+     <div class="col-md-6 home-subscribe_right">
+
+       <div class="subscribe-telegram"><i class="fab fa-telegram-plane"></i></div>
+       <div class="home-subscribe_form">
+         <form>
+           <input type="email" placeholder="name@gmail.com">
+           <input type="submit" value="Subscribe">
+         </form>
+       </div>
+
+     </div>
+   </div>
+  </div>
+
+
+
+</div> <!-- container fluid end's -->
+
+
+{% endblock %}

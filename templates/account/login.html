@@ -1,0 +1,32 @@
+{% extends 'index.html' %}
+{% load static %}
+
+
+{% block title %}Sign In{% endblock %}
+{% block content %}
+<a id="totopbutton"></a>
+
+</div> <!--  breadcrambs end's  -->
+    <main class="pages-other">
+      <section class="form-block1">
+        <div class="wrapper">
+          <div class="form-block1__sides">
+            <div class="sides__lft">
+              <h2>Авторизация</h2>
+              <p>Пожалуйста, используйте следующую форму для авторизации:</p>
+              <form action="." method="post">
+                {% csrf_token %}
+                <input autocomplete="off" placeholder="Логин" type="text" name='username'>
+                <input autocomplete="off" placeholder="Пароль" type="text" name="password">
+                {% if error %}
+                  <p style="color: #eb5959;">Пожалуйста, проверьте введенные данные и повторите попытку.</p>
+                {% endif %}
+                <input type="submit" value="Войти"><small>Нажимая на кнопку Войти, я соглашаюсь на <a href="#"> обработку персональных данных и с правилами пользования Платформы</a></small>
+              </form>
+            </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+{% endblock %}

@@ -1,0 +1,82 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+<a id="totopbutton"></a>
+
+<!-- Header end's --><div class="">  <!-- breadcrambs     -->
+
+    <div class="col-md-12 breadcrumbs">
+
+    <a class="breadcrumb-item" href="{% url 'homepage' %}">Home</a><i class="fas fa-chevron-right"></i><a class="breadcrumb-item" href="{% url 'about' %}">About</a><i class="fas fa-chevron-right"></i><a class="breadcrumb-item" href="{% url 'contacts' %}">Contacts</a>
+    </div>
+
+</div> <!--  breadcrambs end's  -->
+    <main class="pages-other">
+      <section class="about-block1">
+        <div class="wrapper">
+          <h1>О CryptoChip</h1>
+          <div class="next-page__mob block-mob"><a href="{% url 'about' %}"><span>О проекте</span><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8 6L14 6L14 8L8 8L8 14L6 14L6 8L-2.62268e-07 8L-3.49691e-07 6L6 6L6 -2.62268e-07L8 -3.49691e-07L8 6Z" fill="#A5E7E3"/>
+</svg></a><a href="{% url 'map' %}"><span>География студентов</span><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8 6L14 6L14 8L8 8L8 14L6 14L6 8L-2.62268e-07 8L-3.49691e-07 6L6 6L6 -2.62268e-07L8 -3.49691e-07L8 6Z" fill="#A5E7E3"/>
+</svg></a><a href="{% url 'reviews' %}"><span>Отзывы</span><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8 6L14 6L14 8L8 8L8 14L6 14L6 8L-2.62268e-07 8L-3.49691e-07 6L6 6L6 -2.62268e-07L8 -3.49691e-07L8 6Z" fill="#A5E7E3"/>
+</svg></a></div>
+          <nav class="pages-nav">
+            <ul>
+              <li><a href="{% url 'about' %}">О проекте</a></li>
+              <li><a href="{% url 'map' %}">География студентов</a></li>
+              <li><a href="{% url 'reviews' %}">Отзывы</a></li>
+              <li class="li_active"><a href="{% url 'contacts' %}">Контакты</a></li>
+            </ul>
+          </nav>
+        </div>
+      </section>
+      <section class="form-block1">
+        <div class="wrapper">
+          <div class="form-block1__sides">
+            <div class="sides__lft">
+              <h2>Свяжитесь с нами</h2>
+              <p>Вы можете написать нам  по любому интересующему вас вопросу: от обучения до сотрудничеств.</p>
+              <form action="#">
+                <input placeholder="Имя" type="type" required>
+                <input placeholder="Телефон" type="num" required>
+                <input placeholder="Email" type="email" required>
+                <input placeholder="Сообщение" type="text" required>
+                <div class="file">
+                  <label for="fl1">Прикрепить файл</label>
+                  <input type="file" id="fl1">
+                </div>
+                <input type="submit" value="Отправить"><small>Нажимая на кнопку Отправить, я соглашаюсь на <a href="#"> обработку персональных данных и с правилами пользования Платформы</a></small>
+              </form>
+            </div>
+            <div class="sides__rht">
+              <div class="rht__item">
+                <div class="item__title">Контактный центр</div><a href="tel:00000000000">0 (000) 000-00-00</a>
+              </div>
+              <div class="rht__item">
+                <div class="item__title">Отдел заботы о студентах</div><a href="tel:00000000000">0 (000) 000-00-00</a>
+              </div>
+              <div class="rht__item">
+                <div class="item__title">Юридический адрес</div>
+                <p>123456, г. Москва, ул. Подвойского, д. 14, стр. 7</p>
+              </div>
+              <div class="rht__item">
+                <div class="item__title">Реквизиты</div>
+                <p>Р/С   40702810123450101230 в Московский банк ПАО Сбербанк г. Москва <br />БИК 044521234 <br />К/С   30101234500000000225 <br />ОГРН   1047712345678 <br />ИНН   7712345678 <br />КПП 779101001</p>
+              </div>
+              <div class="rht__item">
+                <div class="item__title">Email</div><a href="mailto:cryptochipsup@gmail.com">cryptochipsup@gmail.com</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="next-page">
+        <div class="wrapper">
+          <p>Следующий раздел</p><a class="next-page__text" href="{% url 'about' %}">О проекте</a>
+        </div>
+      </section>
+    </main>
+{% endblock %}

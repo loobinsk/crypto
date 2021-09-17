@@ -1,0 +1,129 @@
+extends header.pug
+
+block content
+
+    include breadcrumbs.html
+    main.pages-other
+        section.about-block1
+            .wrapper
+                h1 О CryptoChip
+                .next-page__mob.block-mob
+                    a(href="#")
+                        span О проекте
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 6L14 6L14 8L8 8L8 14L6 14L6 8L-2.62268e-07 8L-3.49691e-07 6L6 6L6 -2.62268e-07L8 -3.49691e-07L8 6Z" fill="#A5E7E3"/>
+                        </svg>
+                    //- a(href="#")
+                    //-     span География студентов
+                    //-     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    //-         <path d="M8 6L14 6L14 8L8 8L8 14L6 14L6 8L-2.62268e-07 8L-3.49691e-07 6L6 6L6 -2.62268e-07L8 -3.49691e-07L8 6Z" fill="#A5E7E3"/>
+                    //-     </svg>
+                    //- a(href="#")
+                    //-     span Отзывы
+                    //-     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    //-         <path d="M8 6L14 6L14 8L8 8L8 14L6 14L6 8L-2.62268e-07 8L-3.49691e-07 6L6 6L6 -2.62268e-07L8 -3.49691e-07L8 6Z" fill="#A5E7E3"/>
+                    //-     </svg>
+                    //- a(href="#")
+                    //-     span Контакты
+                    //-     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    //-         <path d="M8 6L14 6L14 8L8 8L8 14L6 14L6 8L-2.62268e-07 8L-3.49691e-07 6L6 6L6 -2.62268e-07L8 -3.49691e-07L8 6Z" fill="#A5E7E3"/>
+                    //-     </svg>
+                nav.pages-nav
+                    ul
+                        li
+                            a(href="#") О проекте
+                        li.li_active
+                            a(href="#") География студентов
+                        li
+                            a(href="#") Отзывы
+                        li
+                            a(href="#") Контакты
+
+        section.map-block1
+            .wrapper
+                //- include map-svg.pug
+                img(src="img/map1.svg" svg="map" width="100%")
+
+        section.map-block3.block-mob
+            .wrapper
+                h3 Страны: 55
+                p Франция, Германия, Польша, Украина, Италия, Россия, Нидерланды, Франция, Германия, Польша, Украина, Италия, Россия, Нидерланды...
+                h3 Города: 167
+                p Варшава, Вена, Киев, Стамбул, Лондон, Минск, Хельсинки, Берлин, Париж, Москва, Варшава, Вена, Киев, Стамбул, Лондон, Минск, Хельсинки, Берлин, Париж, Москва...
+
+        section.map-block2
+            .map-block2__block
+                .map-block2__item Франция
+                .map-block2__item Германия
+                .map-block2__item Польша
+                .map-block2__item Украина
+                .map-block2__item Италия
+                .map-block2__item Россия
+                .map-block2__item Нидерланды
+            .map-block2__block
+                .map-block2__item Берлин
+                .map-block2__item Париж
+                .map-block2__item Москва
+                .map-block2__item Варшава
+                .map-block2__item Вена
+                .map-block2__item Киев
+                .map-block2__item Стамбул
+                .map-block2__item Лондон
+                .map-block2__item Минск
+                .map-block2__item Хельсинки
+            .map-block2__block
+                .map-block2__item Берлин
+                .map-block2__item Париж
+                .map-block2__item Москва
+                .map-block2__item Варшава
+                .map-block2__item Вена
+                .map-block2__item Киев
+                .map-block2__item Стамбул
+                .map-block2__item Лондон
+                .map-block2__item Минск
+                .map-block2__item Хельсинки
+                .map-block2__item Варшава
+                .map-block2__item Вена
+                .map-block2__item Киев
+                .map-block2__item Стамбул
+            .map-block2__block
+                .map-block2__item Берлин
+                .map-block2__item Париж
+                .map-block2__item Москва
+                .map-block2__item Варшава
+                .map-block2__item Вена
+                .map-block2__item Киев
+                .map-block2__item Стамбул
+                .map-block2__item Лондон
+                .map-block2__item Минск
+                .map-block2__item Хельсинки
+                .map-block2__item Берлин
+                .map-block2__item Париж
+                .map-block2__item Москва
+                .map-block2__item Варшава
+                .map-block2__item Вена
+                .map-block2__item Киев
+                .map-block2__item Стамбул
+                .map-block2__item Лондон
+                .map-block2__item Минск
+                .map-block2__item Хельсинки
+
+        section.next-page
+            .wrapper
+                p Следующий раздел
+                a(href="#").next-page__text Отзывы
+                .next-page__mob.block-mob
+                    a(href="#")
+                        span Отзывы
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 6L14 6L14 8L8 8L8 14L6 14L6 8L-2.62268e-07 8L-3.49691e-07 6L6 6L6 -2.62268e-07L8 -3.49691e-07L8 6Z" fill="#A5E7E3"/>
+                        </svg>
+                    a(href="#")
+                        span Контакты
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 6L14 6L14 8L8 8L8 14L6 14L6 8L-2.62268e-07 8L-3.49691e-07 6L6 6L6 -2.62268e-07L8 -3.49691e-07L8 6Z" fill="#A5E7E3"/>
+                        </svg>
+
+
+
+    include footer.pug

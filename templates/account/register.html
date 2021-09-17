@@ -1,0 +1,39 @@
+{% extends 'index.html' %}
+{% load static %}
+
+
+{% block title %}Sign Up{% endblock %}
+{% block content %}
+<a id="totopbutton"></a>
+
+</div> <!--  breadcrambs end's  -->
+    <main class="pages-other">
+      <section class="form-block1">
+        <div class="wrapper">
+          <div class="form-block1__sides">
+            <div class="sides__lft">
+              <h2>Регистрация</h2>
+              <form action="{% url 'register' %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input required autocomplete="off" placeholder="Логин" type="text" name='username'>
+                <input required autocomplete="off" placeholder="Имя" type="text" name='first_name'>
+                <input required autocomplete="off" placeholder="Фамилия" type="text" name='last_name'>
+                <input autocomplete="off" placeholder="Email" type="email" required name="email">
+                <input required autocomplete="off" placeholder="Пароль" type="text" name="password">
+                <input required autocomplete="off" placeholder="Повторите пароль" type="text" name='password2'>
+                <div class="file">
+                  <label for="fl1">Фотография</label>
+                  <input type="file" id="fl1" name="image">
+                </div>
+                {% if error %}
+                  <p style="color: #eb5959;">{{ error }}</p>
+                {% endif %}
+                <input type="submit" value="Зарегистрироваться"><small>Нажимая на кнопку Зарегистрироваться, я соглашаюсь на <a href="#"> обработку персональных данных и с правилами пользования Платформы</a></small>
+              </form>
+            </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+{% endblock %}

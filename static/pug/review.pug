@@ -1,0 +1,108 @@
+extends header.pug
+
+block content
+
+    include breadcrumbs.html
+    main.pages-other
+        section.about-block1
+            .wrapper
+                h1 О CryptoChip
+                .next-page__mob.block-mob
+                    a(href="#")
+                        span О проекте
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 6L14 6L14 8L8 8L8 14L6 14L6 8L-2.62268e-07 8L-3.49691e-07 6L6 6L6 -2.62268e-07L8 -3.49691e-07L8 6Z" fill="#A5E7E3"/>
+                        </svg>
+                    a(href="#")
+                        span География студентов
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 6L14 6L14 8L8 8L8 14L6 14L6 8L-2.62268e-07 8L-3.49691e-07 6L6 6L6 -2.62268e-07L8 -3.49691e-07L8 6Z" fill="#A5E7E3"/>
+                        </svg>
+                    //- a(href="#")
+                    //-     span Отзывы
+                    //-     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    //-         <path d="M8 6L14 6L14 8L8 8L8 14L6 14L6 8L-2.62268e-07 8L-3.49691e-07 6L6 6L6 -2.62268e-07L8 -3.49691e-07L8 6Z" fill="#A5E7E3"/>
+                    //-     </svg>
+                    //- a(href="#")
+                    //-     span Контакты
+                    //-     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    //-         <path d="M8 6L14 6L14 8L8 8L8 14L6 14L6 8L-2.62268e-07 8L-3.49691e-07 6L6 6L6 -2.62268e-07L8 -3.49691e-07L8 6Z" fill="#A5E7E3"/>
+                    //-     </svg>
+                nav.pages-nav
+                    ul
+                        li
+                            a(href="#") О проекте
+                        li
+                            a(href="#") География студентов
+                        li.li_active
+                            a(href="#") Отзывы
+                        li
+                            a(href="#") Контакты
+
+        section.review-block1
+            .wrapper
+                p Сегодня в нашем университете обучились уже более 32 500 человек.
+                .review-block1__block
+                    .review-block1__item Все направления (567)
+                    .review-block1__item Программирование (165)
+                    .review-block1__item Маркетинг (120)
+                    .review-block1__item Маркетинг (120)
+                    .review-block1__item Программирование (165)
+                    .review-block1__item Маркетинг (120)
+                    .review-block1__item Программирование (165)
+                    .review-block1__item Маркетинг (120)
+                    .review-block1__item Маркетинг (120)
+                .review-block1__block.block-mob
+                    select
+                        option Все направления (567)
+                        option Программирование (165)
+                        option Маркетинг (120)
+                        option Маркетинг (120)
+                        option Программирование (165)
+                        option Маркетинг (120)
+                        option Программирование (165)
+                        option Маркетинг (120)
+                        option Маркетинг (120)
+                        option Все направления (567)
+                        option Программирование (165)
+                        option Маркетинг (120)
+                        option Маркетинг (120)
+                        option Программирование (165)
+                        option Маркетинг (120)
+                        option Программирование (165)
+                        option Маркетинг (120)
+                        option Маркетинг (120)
+                        option Все направления (567)
+                        option Программирование (165)
+                        option Маркетинг (120)
+                        option Маркетинг (120)
+                        option Программирование (165)
+                        option Маркетинг (120)
+                        option Программирование (165)
+                        option Маркетинг (120)
+                        option Маркетинг (120)
+                .review-block1__block.block-mob
+                    select
+                        option Все оценки
+                        option Все оценки
+                        option Все оценки
+
+        section.review-block2.review
+            .wrapper
+                include review-block.html
+
+        section.next-page
+            .wrapper
+                p Следующий раздел
+                a(href="#").next-page__text Контакты
+                .next-page__mob.block-mob
+                    a(href="#")
+                        span Контакты
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 6L14 6L14 8L8 8L8 14L6 14L6 8L-2.62268e-07 8L-3.49691e-07 6L6 6L6 -2.62268e-07L8 -3.49691e-07L8 6Z" fill="#A5E7E3"/>
+                        </svg>
+
+
+
+
+    include footer.pug

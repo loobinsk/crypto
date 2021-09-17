@@ -1,0 +1,38 @@
+doctype html
+html(lang="en")
+	head
+		title Cryptochip App
+
+		meta(charset="UTF-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0")
+		meta(name="description" content="Description of website")
+		meta(name="keywords" content="Website")
+
+
+		link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
+		script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js")
+		script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js")
+		script(src="https://kit.fontawesome.com/7de816dd84.js" crossorigin="anonymous")
+
+		link(rel="stylesheet" href="css/slick/slick-theme.css")
+		link(rel="stylesheet" href="css/slick/slick.css")
+		link(rel="stylesheet" href="css/style.css")
+
+		//- <link rel="stylesheet" href="css/styles.css">
+		<link rel="stylesheet" href="content-filter/css/filter-style.css"> <!-- Resource style -->
+
+		<script src="content-filter/js/jquery-2.1.1.js"></script>
+		<script src="content-filter/js/jquery.mixitup.min.js"></script>
+		<script src="content-filter/js/filter-main.js"></script> <!-- Resource jQuery -->
+		//- <script src="content-filter/js/modernizr.js"></script>  <!-- Modernizr -->
+	body
+		.blur-block
+			.blur-block__item.blur-block__item1
+				img(src="img/blur1.png" alt="Blur")
+			.blur-block__item.blur-block__item2
+				img(src="img/blur2.png" alt="Blur")
+			.blur-block__item.blur-block__item3
+				img(src="img/blur3.png" alt="Blur")
+		include header.html
+		
+		block content

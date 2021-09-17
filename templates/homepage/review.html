@@ -1,0 +1,146 @@
+{% extends 'index.html' %}
+{% load static %}
+
+
+{% block title %}Отзывы{% endblock %}
+{% block content %}
+<a id="totopbutton"></a>
+
+<!-- Header end's --><div class="">  <!-- breadcrambs     -->
+
+    <div class="col-md-12 breadcrumbs">
+
+    <a class="breadcrumb-item" href="{% url 'homepage' %}">Home</a><i class="fas fa-chevron-right"></i><a class="breadcrumb-item" href="{% url 'about' %}">About</a><i class="fas fa-chevron-right"></i><a class="breadcrumb-item" href="{% url 'reviews' %}">Reviews</a>
+     
+    </div>
+
+</div> <!--  breadcrambs end's  -->
+    <main class="pages-other">
+      <section class="about-block1">
+        <div class="wrapper">
+          <h1>О CryptoChip</h1>
+          <div class="next-page__mob block-mob"><a href="{% url 'about' %}"><span>О проекте</span><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8 6L14 6L14 8L8 8L8 14L6 14L6 8L-2.62268e-07 8L-3.49691e-07 6L6 6L6 -2.62268e-07L8 -3.49691e-07L8 6Z" fill="#A5E7E3"/>
+</svg></a><a href="{% url 'map' %}"><span>География студентов</span><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8 6L14 6L14 8L8 8L8 14L6 14L6 8L-2.62268e-07 8L-3.49691e-07 6L6 6L6 -2.62268e-07L8 -3.49691e-07L8 6Z" fill="#A5E7E3"/>
+</svg></a></div>
+          <nav class="pages-nav">
+            <ul>
+              <li><a href="{% url 'about' %}">О проекте</a></li>
+              <li><a href="{% url 'map' %}">География студентов</a></li>
+              <li class="li_active"><a href="{% url 'reviews' %}">Отзывы</a></li>
+              <li><a href="{% url 'contacts' %}">Контакты</a></li>
+            </ul>
+          </nav>
+        </div>
+      </section>
+      <section class="review-block1">
+        <div class="wrapper">
+          <p>Сегодня в нашем университете обучились уже более 32 500 человек.</p>
+          <div class="review-block1__block">
+            <div class="review-block1__item">Все направления (567)</div>
+            <div class="review-block1__item">Программирование (165)</div>
+            <div class="review-block1__item">Маркетинг (120)</div>
+            <div class="review-block1__item">Маркетинг (120)</div>
+            <div class="review-block1__item">Программирование (165)</div>
+            <div class="review-block1__item">Маркетинг (120)</div>
+            <div class="review-block1__item">Программирование (165)</div>
+            <div class="review-block1__item">Маркетинг (120)</div>
+            <div class="review-block1__item">Маркетинг (120)</div>
+          </div>
+          <div class="review-block1__block block-mob">
+            <select>
+              <option>Все направления (567)</option>
+              <option>Программирование (165)</option>
+              <option>Маркетинг (120)</option>
+              <option>Маркетинг (120)</option>
+              <option>Программирование (165)</option>
+              <option>Маркетинг (120)</option>
+              <option>Программирование (165)</option>
+              <option>Маркетинг (120)</option>
+              <option>Маркетинг (120)</option>
+              <option>Все направления (567)</option>
+              <option>Программирование (165)</option>
+              <option>Маркетинг (120)</option>
+              <option>Маркетинг (120)</option>
+              <option>Программирование (165)</option>
+              <option>Маркетинг (120)</option>
+              <option>Программирование (165)</option>
+              <option>Маркетинг (120)</option>
+              <option>Маркетинг (120)</option>
+              <option>Все направления (567)</option>
+              <option>Программирование (165)</option>
+              <option>Маркетинг (120)</option>
+              <option>Маркетинг (120)</option>
+              <option>Программирование (165)</option>
+              <option>Маркетинг (120)</option>
+              <option>Программирование (165)</option>
+              <option>Маркетинг (120)</option>
+              <option>Маркетинг (120)</option>
+            </select>
+          </div>
+          <div class="review-block1__block block-mob">
+            <select>
+              <option>Все оценки</option>
+              <option>Все оценки</option>
+              <option>Все оценки</option>
+            </select>
+          </div>
+        </div>
+      </section>
+      <section class="review-block2 review">
+        <div class="wrapper"><div class="rht__block">
+  <div class="rht__reviews">
+    {% for review in all_reviews %}
+    <div class="rht__item">
+      <div class="item__photo">
+        <img class="image_review" src="{{ review.student.image.url }}" alt="photo">
+      </div>
+      <div class="item__content">
+        <div class="item__top">
+          <div class="item__name">{{ review.student.get_full_name }}</div>
+          <p class="c-infobox_rating">
+            {% for star in stars %}
+              {% if star > review.rating %}
+                <i class="fas fa-star last-star"></i>
+              {% else %}
+                <i class="fas fa-star"></i>
+              {% endif %}
+            {% endfor %}
+          </p>
+          <div class="item__date">{{ review.create_date }}</div>
+        </div>
+        <div class="item__text">
+          {{ review.text }}
+        </div>
+      </div>
+      <div class="item__likes">
+        <div class="like">
+          <svg id="Icons" height="512" viewBox="0 0 74 74" width="512" xmlns="http://www.w3.org/2000/svg"><path d="m17.56 30.32h-10.58a3.649 3.649 0 0 0 -3.64 3.65v34.38a3.649 3.649 0 0 0 3.64 3.65h10.58a3.658 3.658 0 0 0 3.65-3.65v-34.38a3.658 3.658 0 0 0 -3.65-3.65z"/><path d="m69.09 42.29a6.231 6.231 0 0 0 -1.82-4.4 3 3 0 0 0 -.32-.3 6.081 6.081 0 0 0 -2.36-11.68h-21.7c.12-.21.23-.4.33-.59a14.353 14.353 0 0 0 1.48-3.22 20.85 20.85 0 0 0 .87-4.82 17.74 17.74 0 0 0 -4.6-12.99 6.772 6.772 0 0 0 -4.77-2.29 4.923 4.923 0 0 0 -5.08 4.36.66.66 0 0 0 -.01.14v8.76l-5.8 14.7a9.425 9.425 0 0 1 -2.1 3.19v33.88a33.044 33.044 0 0 0 4.36.89 12.466 12.466 0 0 0 1.65.11h29.41a5.522 5.522 0 0 0 3.88-1.6 5.464 5.464 0 0 0 1.6-3.87 5.407 5.407 0 0 0 -1.36-3.6 6.283 6.283 0 0 0 2.7-11 6.245 6.245 0 0 0 3.64-5.67z"/></svg>
+          <span>{{ review.likes }}</span>
+        </div>
+        <div class="dislike">
+          <svg id="Icons" height="512" viewBox="0 0 74 74" width="512" xmlns="http://www.w3.org/2000/svg"><path d="m17.56 30.32h-10.58a3.649 3.649 0 0 0 -3.64 3.65v34.38a3.649 3.649 0 0 0 3.64 3.65h10.58a3.658 3.658 0 0 0 3.65-3.65v-34.38a3.658 3.658 0 0 0 -3.65-3.65z"/><path d="m69.09 42.29a6.231 6.231 0 0 0 -1.82-4.4 3 3 0 0 0 -.32-.3 6.081 6.081 0 0 0 -2.36-11.68h-21.7c.12-.21.23-.4.33-.59a14.353 14.353 0 0 0 1.48-3.22 20.85 20.85 0 0 0 .87-4.82 17.74 17.74 0 0 0 -4.6-12.99 6.772 6.772 0 0 0 -4.77-2.29 4.923 4.923 0 0 0 -5.08 4.36.66.66 0 0 0 -.01.14v8.76l-5.8 14.7a9.425 9.425 0 0 1 -2.1 3.19v33.88a33.044 33.044 0 0 0 4.36.89 12.466 12.466 0 0 0 1.65.11h29.41a5.522 5.522 0 0 0 3.88-1.6 5.464 5.464 0 0 0 1.6-3.87 5.407 5.407 0 0 0 -1.36-3.6 6.283 6.283 0 0 0 2.7-11 6.245 6.245 0 0 0 3.64-5.67z"/></svg>
+          <span>{{ review.dislikes }}</span>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="review__more">
+    View all reviews
+  </div>
+  </div>
+        </div>
+      </section>
+      <section class="next-page">
+        <div class="wrapper">
+          <p>Следующий раздел</p><a class="next-page__text" href="{% url 'contacts' %}">Контакты</a>
+          <div class="next-page__mob block-mob"><a href="{% url 'contacts' %}"><span>Контакты</span><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8 6L14 6L14 8L8 8L8 14L6 14L6 8L-2.62268e-07 8L-3.49691e-07 6L6 6L6 -2.62268e-07L8 -3.49691e-07L8 6Z" fill="#A5E7E3"/>
+</svg></a></div>
+        </div>
+      </section>
+    </main>
+
+{% endblock %}

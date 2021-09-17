@@ -1,0 +1,119 @@
+{% extends 'index.html' %}
+{% load static %}
+
+
+{% block title %}География студентов{% endblock %}
+{% block content %}
+<a id="totopbutton"></a>
+
+<!-- Header end's --><div class="">  <!-- breadcrambs     -->
+
+    <div class="col-md-12 breadcrumbs">
+
+    <a class="breadcrumb-item" href="{% url 'homepage' %}">Home</a><i class="fas fa-chevron-right"></i><a class="breadcrumb-item" href="{% url 'about' %}">About</a><i class="fas fa-chevron-right"></i><a class="breadcrumb-item" href="{% url 'map' %}">Map</a>
+     
+    </div>
+
+</div> <!--  breadcrambs end's  -->
+    <main class="pages-other">
+      <section class="about-block1">
+        <div class="wrapper">
+          <h1>О CryptoChip</h1>
+          <div class="next-page__mob block-mob"><a href="{% url 'about' %}"><span>О проекте</span><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8 6L14 6L14 8L8 8L8 14L6 14L6 8L-2.62268e-07 8L-3.49691e-07 6L6 6L6 -2.62268e-07L8 -3.49691e-07L8 6Z" fill="#A5E7E3"/>
+</svg></a></div>
+          <nav class="pages-nav">
+            <ul>
+              <li><a href="{% url 'about' %}">О проекте</a></li>
+              <li class="li_active"><a href="{% url 'map' %}">География студентов</a></li>
+              <li><a href="{% url 'reviews' %}">Отзывы</a></li>
+              <li><a href="{% url 'contacts' %}">Контакты</a></li>
+            </ul>
+          </nav>
+        </div>
+      </section>
+      <section class="map-block1">
+        <div class="wrapper"><img src="{% static 'img/map1.svg' %}" svg="map" width="100%"></div>
+      </section>
+      <section class="map-block3 block-mob">
+        <div class="wrapper">
+          <h3>Страны: 55</h3>
+          <p>Франция, Германия, Польша, Украина, Италия, Россия, Нидерланды, Франция, Германия, Польша, Украина, Италия, Россия, Нидерланды...</p>
+          <h3>Города: 167</h3>
+          <p>Варшава, Вена, Киев, Стамбул, Лондон, Минск, Хельсинки, Берлин, Париж, Москва, Варшава, Вена, Киев, Стамбул, Лондон, Минск, Хельсинки, Берлин, Париж, Москва...</p>
+        </div>
+      </section>
+      <section class="map-block2">
+        <div class="map-block2__block">
+          <div class="map-block2__item">Франция</div>
+          <div class="map-block2__item">Германия</div>
+          <div class="map-block2__item">Польша</div>
+          <div class="map-block2__item">Украина</div>
+          <div class="map-block2__item">Италия</div>
+          <div class="map-block2__item">Россия</div>
+          <div class="map-block2__item">Нидерланды</div>
+        </div>
+        <div class="map-block2__block">
+          <div class="map-block2__item">Берлин</div>
+          <div class="map-block2__item">Париж</div>
+          <div class="map-block2__item">Москва</div>
+          <div class="map-block2__item">Варшава</div>
+          <div class="map-block2__item">Вена</div>
+          <div class="map-block2__item">Киев</div>
+          <div class="map-block2__item">Стамбул</div>
+          <div class="map-block2__item">Лондон</div>
+          <div class="map-block2__item">Минск</div>
+          <div class="map-block2__item">Хельсинки</div>
+        </div>
+        <div class="map-block2__block">
+          <div class="map-block2__item">Берлин</div>
+          <div class="map-block2__item">Париж</div>
+          <div class="map-block2__item">Москва</div>
+          <div class="map-block2__item">Варшава</div>
+          <div class="map-block2__item">Вена</div>
+          <div class="map-block2__item">Киев</div>
+          <div class="map-block2__item">Стамбул</div>
+          <div class="map-block2__item">Лондон</div>
+          <div class="map-block2__item">Минск</div>
+          <div class="map-block2__item">Хельсинки</div>
+          <div class="map-block2__item">Варшава</div>
+          <div class="map-block2__item">Вена</div>
+          <div class="map-block2__item">Киев</div>
+          <div class="map-block2__item">Стамбул</div>
+        </div>
+        <div class="map-block2__block">
+          <div class="map-block2__item">Берлин</div>
+          <div class="map-block2__item">Париж</div>
+          <div class="map-block2__item">Москва</div>
+          <div class="map-block2__item">Варшава</div>
+          <div class="map-block2__item">Вена</div>
+          <div class="map-block2__item">Киев</div>
+          <div class="map-block2__item">Стамбул</div>
+          <div class="map-block2__item">Лондон</div>
+          <div class="map-block2__item">Минск</div>
+          <div class="map-block2__item">Хельсинки</div>
+          <div class="map-block2__item">Берлин</div>
+          <div class="map-block2__item">Париж</div>
+          <div class="map-block2__item">Москва</div>
+          <div class="map-block2__item">Варшава</div>
+          <div class="map-block2__item">Вена</div>
+          <div class="map-block2__item">Киев</div>
+          <div class="map-block2__item">Стамбул</div>
+          <div class="map-block2__item">Лондон</div>
+          <div class="map-block2__item">Минск</div>
+          <div class="map-block2__item">Хельсинки</div>
+        </div>
+      </section>
+      <section class="next-page">
+        <div class="wrapper">
+          <p>Следующий раздел</p><a class="next-page__text" href="{% url 'reviews' %}">Отзывы</a>
+          <div class="next-page__mob block-mob"><a href="{% url 'reviews' %}"><span>Отзывы</span><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8 6L14 6L14 8L8 8L8 14L6 14L6 8L-2.62268e-07 8L-3.49691e-07 6L6 6L6 -2.62268e-07L8 -3.49691e-07L8 6Z" fill="#A5E7E3"/>
+</svg></a><a href="{% url 'contacts' %}"><span>Контакты</span><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8 6L14 6L14 8L8 8L8 14L6 14L6 8L-2.62268e-07 8L-3.49691e-07 6L6 6L6 -2.62268e-07L8 -3.49691e-07L8 6Z" fill="#A5E7E3"/>
+</svg></a></div>
+        </div>
+      </section>
+    </main>
+
+{% endblock %}
