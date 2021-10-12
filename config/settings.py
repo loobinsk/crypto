@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'courses',
     'groups',
     'rosetta',
+    'spurl',
     'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',

@@ -7,15 +7,46 @@ from groups.models import Teacher, Student
 def homepage(request):
 	template = 'index.html'
 
+
+	all_courses = Course.objects.filter(active=True).order_by('-views')
+
+	ct_type = request.GET.get('categorybytype')
+	ct_skill = request.GET.get('categorybyskill')
+	if ct_skill == 'all':
+		ct_skill = None;
+	if ct_type == 'all':
+		ct_type = None;
+	if ct_type != None and ct_skill != None: 
+		all_courses = Course.objects.filter(active=True,
+											category_by_skill=ct_skill,
+											category_by_type=ct_type,
+											).order_by('-views')
+	elif ct_type != None: 
+		all_courses = Course.objects.filter(active=True,
+											category_by_type=ct_type,
+											).order_by('-views')
+	elif ct_skill != None:
+		all_courses = Course.objects.filter(active=True,
+											category_by_skill=ct_skill,
+											).order_by('-views')		
+
 	#coruses
-	all_courses = Course.objects.filter(active=True).order_by('-views').all()
+
 	all_categories_type_user = CategoryByType.objects.all()
 	all_categories_skills = CategoryBySkill.objects.all()
 
 	#Teacher
 	all_teachers = Teacher.objects.all()
 
+	if ct_skill == None:
+		ct_skill = 'All'
+	else:
+		ct_skill = CategoryBySkill.objects.get(pk=ct_skill)
 
+	if ct_type == None:
+		ct_type = 'All'
+	else:
+		ct_type = CategoryByType.objects.get(pk=ct_type)
 
 	context = {
 		#star
@@ -25,6 +56,9 @@ def homepage(request):
 		'all_courses': all_courses,
 		'all_categories_type_user': all_categories_type_user,
 		'all_categories_skills': all_categories_skills,
+
+		'ct_type': ct_type,
+		'ct_skill': ct_skill,
 
 		#teachers
 		'all_teachers': all_teachers,

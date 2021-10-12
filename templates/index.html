@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 {% load static i18n %}
+{% load spurl %}
+
+
 {% get_current_language as LANGUAGE_CODE %}
 <html lang="{{ LANGUAGE_CODE }}">
   <head>
@@ -9,6 +12,7 @@
     <link rel="shortcut icon" href="{% static 'logo.png' %}" type="image/x-icon">
     <meta name="description" content="Description of website">
     <meta name="keywords" content="Website">
+    <meta name="facebook-domain-verification" content="s1m6apns605kqqr8mgej6kzsm23nhs" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -22,6 +26,13 @@
     <script src="{% static 'content-filter/js/1filter-main.js' %}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
+    <style type="text/css">
+    .checkbos{ 
+      position: absolute;
+      z-index: -1;
+      opacity: 0;
+    }
+    </style>
   </head>
   <body>
     <div class="blur-block">
@@ -160,7 +171,7 @@
 
 <!-- page main container -->
 
-  <div class="container">
+  <div id="categories" class="container">
     <div class="row hero-section">
       <div class="col-md-12">
         <p class="hero-heading">{% trans 'Learn <span class="blue-text">new skill</span> to enhance your life' %}</p>
@@ -172,27 +183,37 @@
   <!--     courses carousel row -->
   <div class="container">
     <div class="row carousel-sec">
-      <div class="col-md-12">
-        <div class="categories-investors">
-          {% for i in all_categories_type_user %}
-            <a class="owl-filter_btn" href="#" data-filter-heading="all">{{ i.name }}</a>
-          {% endfor %}  
+      <form id="form1" method="get" action=".">
+        <div class="col-md-12">
+          <div class="categories-investors">
+            <a  onclick="location.replace(location.href)" {% if ct_type == 'All' %}style='background: #04b8ad;'{% endif %} 
+              class="owl-filter_btn" 
+              href='{% spurl base=request.get_full_path set_query="categorybytype=all" %}'
+              >All</a>
+            {% for category in all_categories_type_user %}
+              <a {% if ct_type.name in category.name %}style='background: #04b8ad;'{% endif %} 
+              class="owl-filter_btn" href='{% spurl base=request.get_full_path set_query="categorybytype={{category.pk}}" %}'>{{ category.name }}</a>
+            {% endfor %}  
+          </div>
         </div>
-      </div>
-      <div class="col-md-12">
-        <div class="courses-carousel">
-          <a class="owl-filter_btn" href="#" data-filter-heading="all">{% trans 'All' %}</a>
-          {% for i in all_categories_skills %}
-            <a class="owl-filter_btn" href="#" data-filter-heading="12">{{ i.name }}</a>
-          {% endfor %}
+        <div class="col-md-12">
+          <div class="courses-carousel">
+            <a {% if ct_skill == 'All' %}style='background: #04b8ad;'{% endif %} class="owl-filter_btn" href='{% spurl base=request.get_full_path set_query="categorybyskill=all" %}'>{% trans 'All' %}</a>
+            {% for category in all_categories_skills %}
+              <a class="owl-filter_btn" 
+              href='{% spurl base=request.get_full_path set_query="categorybyskill={{category.pk}}" %}'
+              {% if ct_skill.name in category.name %}style='background: #04b8ad;'{% endif %}>
+            {{ category.name }}
+              </a>
+            {% endfor %}
+          </div>
+          <div class="show__all">
+            {% trans 'All categories' %}
+          </div>
         </div>
-        <div class="show__all">
-          {% trans 'All categories' %}
-        </div>
-      </div>
+    </form>
     </div>
   </div>
-
         
 <section class="slider-ovf">
 {% if all_courses %}
@@ -579,5 +600,20 @@
     });
 
     </script>
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '608633060130443');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=608633060130443&ev=PageView&noscript=1"
+    /></noscript>
   </body>
 </html>
