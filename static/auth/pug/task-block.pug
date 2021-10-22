@@ -1,0 +1,207 @@
+extends header.pug
+
+block content
+
+	main.main-task-block
+		a(onclick="javascript:history.back(); return false;").task-back
+			<svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path opacity="0.4" d="M0 7.00805L6.01 13.018L7.424 11.604L2.824 7.00405L7.424 2.40405L6.01 0.998047L0 7.00805Z" fill="white"/>
+			</svg>
+			span Назад
+		.main-task-block__title
+			h1 <span>Курс:</span> Introduction to Data Science and Machine Learning 
+			.title__status.select
+				.select__head
+					span ожидают проверки
+					<svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M11.9167 1.99909L6.96074 6.95983L2 2.00391" stroke="white" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/>
+					</svg>
+				ul.select__body
+					li asd
+					li qwe
+					li zxcvbnmjhgfd
+		.main-task-block__filter
+			p Фильтр по:
+			.filter__data
+				span дате
+				a(href="#").up
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M21.25 12C21.25 6.892 17.109 2.75 12 2.75C6.892 2.75 2.75 6.892 2.75 12C2.75 17.108 6.892 21.25 12 21.25C17.109 21.25 21.25 17.108 21.25 12Z" stroke="white" stroke-opacity="0.25" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M15.4727 13.4414L12.0017 9.95541L8.53066 13.4414" stroke="white" stroke-opacity="0.25" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+				a(href="#").down
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 12C2.75 17.108 6.891 21.25 12 21.25C17.108 21.25 21.25 17.108 21.25 12C21.25 6.892 17.108 2.75 12 2.75C6.891 2.75 2.75 6.892 2.75 12Z" stroke="#8DBCFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M8.52734 10.5586L11.9983 14.0446L15.4693 10.5586" stroke="#8DBCFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+			.filter__all
+				span по лекции
+				.select
+					.select__head
+						span Все лекции
+						<svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M11.9167 1.99518L6.96074 6.95592L2 2" stroke="#8DBCFF" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/>
+						</svg>
+					ul.select__body
+						li asdsad
+						li asdsad asdas
+						li asdsad asdas asdasd
+		.main-task-block__block
+			.main-task-block__item
+				.item__photo
+					img(src="img/task1.jpg" alt="Photo")
+				.item__name Артем Яшин
+				.item__added + 4
+				.item__completed Прохождение курса: 15/25
+				.item__select.select
+					.select__head
+						span Лекция 25
+						<svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path opacity="0.5" d="M10.9167 0.999089L5.96074 5.95983L1 1.00391" stroke="white" stroke-linecap="square" stroke-linejoin="round"/>
+						</svg>
+					.select__body
+						ul
+							li Лекция 1
+							li Лекция 2
+							li Лекция 3
+							li Лекция 4
+							li Лекция 5
+							li Лекция 6
+							li Лекция 7
+							li Лекция 8
+							li Лекция 9
+							li Лекция 10
+				a(href="task-item.html").item__link Проверить домашнее задание
+			.main-task-block__item
+				.item__photo
+					img(src="img/task1.jpg" alt="Photo")
+				.item__name Артем Яшин
+				.item__added + 4
+				.item__completed Прохождение курса: 15/25
+				.item__select.select
+					.select__head
+						span Лекция 25
+						<svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path opacity="0.5" d="M10.9167 0.999089L5.96074 5.95983L1 1.00391" stroke="white" stroke-linecap="square" stroke-linejoin="round"/>
+						</svg>
+					.select__body
+						ul
+							li Лекция 1
+							li Лекция 2
+							li Лекция 3
+							li Лекция 4
+							li Лекция 5
+							li Лекция 6
+							li Лекция 7
+							li Лекция 8
+							li Лекция 9
+							li Лекция 10
+				a(href="task-item.html").item__link Проверить домашнее задание
+			.main-task-block__item
+				.item__photo
+					img(src="img/task1.jpg" alt="Photo")
+				.item__name Артем Яшин
+				.item__added + 4
+				.item__completed Прохождение курса: 15/25
+				.item__select.select
+					.select__head
+						span Лекция 25
+						<svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path opacity="0.5" d="M10.9167 0.999089L5.96074 5.95983L1 1.00391" stroke="white" stroke-linecap="square" stroke-linejoin="round"/>
+						</svg>
+					.select__body
+						ul
+							li Лекция 1
+							li Лекция 2
+							li Лекция 3
+							li Лекция 4
+							li Лекция 5
+							li Лекция 6
+							li Лекция 7
+							li Лекция 8
+							li Лекция 9
+							li Лекция 10
+				a(href="task-item.html").item__link Проверить домашнее задание
+			.main-task-block__item
+				.item__photo
+					img(src="img/task1.jpg" alt="Photo")
+				.item__name Артем Яшин
+				.item__completed Прохождение курса: 15/25
+				.item__select.select
+					.select__head
+						span Лекция 25
+						<svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path opacity="0.5" d="M10.9167 0.999089L5.96074 5.95983L1 1.00391" stroke="white" stroke-linecap="square" stroke-linejoin="round"/>
+						</svg>
+					.select__body
+						ul
+							li Лекция 1
+							li Лекция 2
+							li Лекция 3
+							li Лекция 4
+							li Лекция 5
+							li Лекция 6
+							li Лекция 7
+							li Лекция 8
+							li Лекция 9
+							li Лекция 10
+				a(href="task-item.html").item__link Проверить домашнее задание
+			.main-task-block__item
+				.item__photo
+					img(src="img/task1.jpg" alt="Photo")
+				.item__name Артем Яшин
+				.item__completed Прохождение курса: 15/25
+				.item__select.select
+					.select__head
+						span Лекция 25
+						<svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path opacity="0.5" d="M10.9167 0.999089L5.96074 5.95983L1 1.00391" stroke="white" stroke-linecap="square" stroke-linejoin="round"/>
+						</svg>
+					.select__body
+						ul
+							li Лекция 1
+							li Лекция 2
+							li Лекция 3
+							li Лекция 4
+							li Лекция 5
+							li Лекция 6
+							li Лекция 7
+							li Лекция 8
+							li Лекция 9
+							li Лекция 10
+				a(href="task-item.html").item__link Проверить домашнее задание
+
+
+							
+		
+
+
+	include footer.pug
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

@@ -1,0 +1,114 @@
+extends header.pug
+
+block content
+
+	main.main-settings-pay
+		.popup.main-settings-profile__pass
+			.popup__bgd
+			.popup__content
+				.content__head
+					span Изменить пароль
+					<svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<g opacity="0.5">
+						<path d="M15.5143 13.2734L20.1105 17.8696L18.5785 19.4017L13.9823 14.8055L9.38607 19.4017L7.85401 17.8696L12.4502 13.2734L7.85401 8.67724L9.38607 7.14518L13.9823 11.7414L18.5785 7.14518L20.1105 8.67724L15.5143 13.2734Z" fill="white"/>
+						</g>
+					</svg>
+				.content__body
+					label
+						p Адрес электронной почты
+						input(type="text" placeholder="mail.mail@gmail.com")
+					label
+						p Новый пароль
+						input(type="text" placeholder="Введите новый пароль")
+					label
+						p Подтверждение нового пароля
+						input(type="text" placeholder="Введите новый пароль ещё раз")
+					.buttons
+						button.popup__button.popup__close Отменить
+						button.popup__button.popup__link Сохранить
+		.popup.main-settings-profile__mail
+			.popup__bgd
+			.popup__content
+				.content__head
+					span Изменить адрес электронной почты
+					<svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<g opacity="0.5">
+						<path d="M15.5143 13.2734L20.1105 17.8696L18.5785 19.4017L13.9823 14.8055L9.38607 19.4017L7.85401 17.8696L12.4502 13.2734L7.85401 8.67724L9.38607 7.14518L13.9823 11.7414L18.5785 7.14518L20.1105 8.67724L15.5143 13.2734Z" fill="white"/>
+						</g>
+					</svg>
+				.content__body
+					label
+						p Адрес электронной почты
+						input(type="text" placeholder="mail.mail@gmail.com")
+					label
+						p Пароль
+						input(type="text" placeholder="Введите пароль")
+					p.inf В целях безопасности при изменении адреса электронной почты сохраненные данные о кредитной карте будут удалены.
+					.buttons
+						button.popup__button.popup__close Отменить
+						button.popup__button.popup__link Сохранить
+		ul.main-settings__top
+			li
+				a(href="settings.html") Настройки профиля
+			li
+				a(href="settings-profile.html") Учетная запись
+			li.li_active
+				a(href="settings-payments.html") Настройка выплаты
+			li
+				a(href="settings-instruments.html") Инструменты
+		.main-settings-payments__title Заявка премиум-преподавателя
+		.main-settings-profile__block
+			ul.main-settings-profile__menu
+				li
+					a(href="settings-payments.html") Личные данные
+				li
+					a(href="settings-teachers.html") Условия для преподавателей
+				li.li_active
+					a(href="settings-pay.html") Способ выплаты
+			.main-settings-profile__rht
+				p Ниже выберите метод оплаты.
+				br
+				p Подключение нового способа выплат может занять несколько дней. Вы не будете получать платежи через новую привязанную учетную запись, пока её статус не будет отображаться как одобренный.
+				.method-pay
+					.method-pay__item
+						img(src="img/paypal.png" alt="Photo" width="151")
+						button Подключить
+					.method-pay__item
+						img(src="img/payoneer.png" alt="Photo" width="158")
+						span Prepaiв MasterCard, <br />Local Bank Transfer
+						button Подключить
+				button(type="submit").settings__save Сохранить
+
+
+
+
+
+	include footer.pug
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

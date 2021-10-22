@@ -1,0 +1,81 @@
+extends header.pug
+
+block content
+
+	main.main-statistics-reviews
+		.popup.main-statistics-reviews__popup
+			.popup__bgd
+			.popup__content
+				.content__head
+					span Экспортировать отзывы в формате CSV
+					<svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<g opacity="0.5">
+						<path d="M15.5143 13.2734L20.1105 17.8696L18.5785 19.4017L13.9823 14.8055L9.38607 19.4017L7.85401 17.8696L12.4502 13.2734L7.85401 8.67724L9.38607 7.14518L13.9823 11.7414L18.5785 7.14518L20.1105 8.67724L15.5143 13.2734Z" fill="white"/>
+						</g>
+					</svg>
+				.content__body
+					p Отчет об отзывах с применением текущего фильтра будет создан в формате CVS и отправлен вам на эл. почту. Экспорт большого количества отзывов может занять несколько минут. Продолжить?
+					.buttons
+						button.popup__button.popup__close Отменить
+						a(href="statistics-reviews-full.html").popup__button.popup__link Экспортировать
+		ul.main-statistics__top
+			li
+				a(href="statistics.html") Отчеты
+			li
+				a(href="statisics-students.html") Студенты
+			li.li_active
+				a(href="statistics-reviews.html") Отзывы
+			li
+				a(href="#") Трафик
+		.main-statistics-reviews__top
+			.top__checkbox
+				input(type="checkbox")#ch1
+				label(for="ch1") Есть ответы
+			.top__checkbox
+				input(type="checkbox")#ch2
+				label(for="ch2") Есть комментарии
+			.top__data
+				span Дата:
+				p.p_active сначала новые
+				p сначала старые
+			a(href="#").top__export Экспортировать CSV...
+		.main-statistics-reviews__warning
+			.i
+				<svg width="3" height="13" viewBox="0 0 3 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.40625 1.73828C0.40625 2.34078 0.895 2.83203 1.49375 2.83203C2.11 2.83203 2.6 2.34078 2.6 1.73828C2.6 1.13578 2.11 0.644531 1.50625 0.644531C0.9 0.644531 0.40625 1.13578 0.40625 1.73828ZM2.58984 5.70312C2.58984 5.10063 2.09859 4.60938 1.49609 4.60938C0.893594 4.60938 0.402344 5.10063 0.402344 5.70312V11.2281C0.402344 11.8306 0.893594 12.3219 1.49609 12.3219C2.09859 12.3219 2.58984 11.8306 2.58984 11.2281V5.70312Z" fill="white"/></svg>
+			span Чтобы утвержденные оценки студентов отобразились на целевой странице вашего курса, может потребоваться до 48 часов.
+			.close
+				<svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.5 9.12842L14.6179 5.01057L15.9905 6.38319L11.8726 10.501L15.9905 14.6189L14.6179 15.9915L10.5 11.8737L6.38214 15.9915L5.00952 14.6189L9.12738 10.501L5.00952 6.38319L6.38214 5.01057L10.5 9.12842Z" fill="white"/></svg>
+		.main-statistics-reviews__block.main-statistics-reviews__block_nothing
+			p У вас пока нет отзывов.
+
+
+			
+	include footer.pug
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

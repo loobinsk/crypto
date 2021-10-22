@@ -4,11 +4,11 @@ from django.utils.translation import gettext_lazy as _
 
 
 class Human(models.Model):
-	user = models.ForeignKey(User, on_delete=models.CASCADE)
+	user = models.OneToOneField(User, related_name='%(class)s_related', on_delete=models.CASCADE)
 	first_name = models.CharField(_('Имя'),max_length=255, blank=True, null=True)
 	last_name = models.CharField(_('Фамилия'),max_length=255, blank=True, null=True)
-	create_date = models.DateField(_('Дата создания'),auto_now_add=True)
-	update_date = models.DateField(_('Дата обновления'),auto_now=True)
+	create_date = models.DateField(_('Дата создания'), auto_now_add=True)
+	update_date = models.DateField(_('Дата обновления'), auto_now=True)
 	email = models.EmailField(_('Почта'),blank=True, null=True)
 	image = models.ImageField(_('Аватар'), upload_to='students_photo/' ,blank=True, null=True)
 	biography = models.TextField(_('О себе'), blank=True)

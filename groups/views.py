@@ -24,13 +24,16 @@ def register(request):
 		password2 = request.POST['password2']
 		if password == password2:
 			try:
-				new_user = User.objects.create_user(username=username, password=password)
+				new_user = User.objects.create_user(
+					username=username, 
+					password=password,
+					first_name=first_name,
+					email=email,
+					last_name=last_name,)
+
 				new_user.save()
 				new_student = Student(
 								user=new_user,
-								first_name=first_name,
-								last_name=last_name,
-								email=email,
 								image=image,)
 				new_student.save()
 				auth_login(request, new_user)

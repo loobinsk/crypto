@@ -1,0 +1,130 @@
+extends header.pug
+
+block content
+
+	main.main-settings-payments
+		.popup.main-settings-profile__pass
+			.popup__bgd
+			.popup__content
+				.content__head
+					span Изменить пароль
+					<svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<g opacity="0.5">
+						<path d="M15.5143 13.2734L20.1105 17.8696L18.5785 19.4017L13.9823 14.8055L9.38607 19.4017L7.85401 17.8696L12.4502 13.2734L7.85401 8.67724L9.38607 7.14518L13.9823 11.7414L18.5785 7.14518L20.1105 8.67724L15.5143 13.2734Z" fill="white"/>
+						</g>
+					</svg>
+				.content__body
+					label
+						p Адрес электронной почты
+						input(type="text" placeholder="mail.mail@gmail.com")
+					label
+						p Новый пароль
+						input(type="text" placeholder="Введите новый пароль")
+					label
+						p Подтверждение нового пароля
+						input(type="text" placeholder="Введите новый пароль ещё раз")
+					.buttons
+						button.popup__button.popup__close Отменить
+						button.popup__button.popup__link Сохранить
+		.popup.main-settings-profile__mail
+			.popup__bgd
+			.popup__content
+				.content__head
+					span Изменить адрес электронной почты
+					<svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<g opacity="0.5">
+						<path d="M15.5143 13.2734L20.1105 17.8696L18.5785 19.4017L13.9823 14.8055L9.38607 19.4017L7.85401 17.8696L12.4502 13.2734L7.85401 8.67724L9.38607 7.14518L13.9823 11.7414L18.5785 7.14518L20.1105 8.67724L15.5143 13.2734Z" fill="white"/>
+						</g>
+					</svg>
+				.content__body
+					label
+						p Адрес электронной почты
+						input(type="text" placeholder="mail.mail@gmail.com")
+					label
+						p Пароль
+						input(type="text" placeholder="Введите пароль")
+					p.inf В целях безопасности при изменении адреса электронной почты сохраненные данные о кредитной карте будут удалены.
+					.buttons
+						button.popup__button.popup__close Отменить
+						button.popup__button.popup__link Сохранить
+		ul.main-settings__top
+			li
+				a(href="settings.html") Настройки профиля
+			li
+				a(href="settings-profile.html") Учетная запись
+			li.li_active
+				a(href="settings-payments.html") Настройка выплаты
+			li
+				a(href="settings-instruments.html") Инструменты
+		.main-settings-payments__title Заявка премиум-преподавателя
+		.main-settings-profile__block
+			ul.main-settings-profile__menu
+				li.li_active
+					a(href="settings-payments.html") Личные данные
+				li
+					a(href="settings-teachers.html") Условия для преподавателей
+				li
+					a(href="settings-pay.html") Способ выплаты
+			.main-settings-profile__rht
+				form(action="#").main-settings-payments__block
+					.lft
+						.item__avatar
+							<svg width="34" height="43" viewBox="0 0 34 43" fill="none" xmlns="http://www.w3.org/2000/svg"><g opacity="0.2"><path fill-rule="evenodd" clip-rule="evenodd" d="M28.2519 11.2435C28.2519 17.4847 23.2478 22.4891 17.0022 22.4891C10.7587 22.4891 5.75244 17.4847 5.75244 11.2435C5.75244 5.0023 10.7587 0 17.0022 0C23.2478 0 28.2519 5.0023 28.2519 11.2435ZM17 42.4998C7.78254 42.4998 0 41.0016 0 35.2216C0 29.4394 7.83144 27.9944 17 27.9944C26.2196 27.9944 34 29.4925 34 35.2726C34 41.0548 26.1686 42.4998 17 42.4998Z" fill="white"/></g></svg>
+						.item__load-photo
+							button Загрузить новое фото
+							.i
+								<svg width="4" height="12" viewBox="0 0 4 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.945012 1.42695C0.945012 2.00535 1.41421 2.47695 1.98901 2.47695C2.58061 2.47695 3.05101 2.00535 3.05101 1.42695C3.05101 0.848553 2.58061 0.376953 2.00101 0.376953C1.41901 0.376953 0.945012 0.848553 0.945012 1.42695ZM3.04141 5.23442C3.04141 4.65602 2.56981 4.18442 1.99141 4.18442C1.41301 4.18442 0.941406 4.65602 0.941406 5.23442V10.5384C0.941406 11.1168 1.41301 11.5884 1.99141 11.5884C2.56981 11.5884 3.04141 11.1168 3.04141 10.5384V5.23442Z" fill="white"/></svg>
+								.i__block Минимум 200x200px, <br />максимум 6000х6000px
+					.form__block
+						.inputs
+							label
+								p Имя
+								input(type="text" placeholder="Иван")
+							label
+								p Фамилия
+								input(type="text" placeholder="Иванов")
+						label
+							p Основная компетенция
+							input(type="text" placeholder="“Инженер”, “Разработчик” и т.д.")
+						label
+							.p
+								span Биография
+								.i
+									<svg width="4" height="12" viewBox="0 0 4 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.945012 1.42695C0.945012 2.00535 1.41421 2.47695 1.98901 2.47695C2.58061 2.47695 3.05101 2.00535 3.05101 1.42695C3.05101 0.848553 2.58061 0.376953 2.00101 0.376953C1.41901 0.376953 0.945012 0.848553 0.945012 1.42695ZM3.04141 5.23442C3.04141 4.65602 2.56981 4.18442 1.99141 4.18442C1.41301 4.18442 0.941406 4.65602 0.941406 5.23442V10.5384C0.941406 11.1168 1.41301 11.5884 1.99141 11.5884C2.56981 11.5884 3.04141 11.1168 3.04141 10.5384V5.23442Z" fill="white"/></svg>
+									.i__block Биография должна содержать минимум 50 символов; приводить ссылки и коды купонов запрещено.
+							textarea(type="text" placeholder="“Инженер”, “Разработчик” и т.д.")
+						button(type="submit").settings__save Сохранить
+
+
+
+
+
+	include footer.pug
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

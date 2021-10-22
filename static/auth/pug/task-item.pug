@@ -1,0 +1,106 @@
+extends header.pug
+
+block content
+
+	main.main-task-item
+		.sides
+			.lft
+				a(onclick="javascript:history.back(); return false;").task-back
+					<svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path opacity="0.4" d="M0 7.00805L6.01 13.018L7.424 11.604L2.824 7.00405L7.424 2.40405L6.01 0.998047L0 7.00805Z" fill="white"/>
+					</svg>
+					span Назад
+				.main-task-item__block
+					.item__top
+						h2 Домашнее задание 20
+						<svg width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M7 9L14 1.71417L12.3531 4.13704e-07L6.99534 5.57651L1.6376 8.82092e-07L-3.18474e-07 1.71417L7 9Z" fill="white"/>
+						</svg>
+					.item__task
+						span Задание:
+						.status Развернуть
+					.item__answer
+						h3 Ответ студента:
+						p Platea euismod tortor scelerisque libero duis eleifend eros, ipsum placerat nascetur mi ligula nam. Condimentum aliquam eget quis pretium non nunc mattis maximus lobortis, lacus torquent aliquet dignissim tellus habitasse maecenas congue, euismod ad morbi pellentesque sapien pharetra litora facilisis. Convallis ridiculus accumsan conubia aliquet ut dictumst, mi pharetra augue eleifend consectetur, ultrices suscipit finibus etiam sodales.
+						.files
+							a(href="#" download).files__item
+								<svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10.4396 1.01172H4.45139C2.59787 1.01172 1 2.48826 1 4.31071V13.8096C1 15.7346 2.49254 17.2483 4.45139 17.2483H11.6422C13.4967 17.2483 15 15.632 15 13.8096V5.67932L10.4396 1.01172Z" stroke="#04B8AD" stroke-linecap="round" stroke-linejoin="round"/>
+									<path d="M10.2031 1V3.57355C10.2031 4.8298 11.2375 5.84896 12.5158 5.85161C13.7004 5.85427 14.913 5.85515 14.9949 5.84984" stroke="#04B8AD" stroke-linecap="round" stroke-linejoin="round"/>
+									<path d="M7.65322 12.7369V6.92188" stroke="#04B8AD" stroke-linecap="round" stroke-linejoin="round"/>
+									<path d="M5.09766 10.2109L7.65244 12.7332L10.2081 10.2109" stroke="#04B8AD" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+								span Platea euismod.txt
+							a(href="#" download).files__item
+								<svg width="15" height="13" viewBox="0 0 15 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M7.75781 0C3.77998 0 0.515625 3.23607 0.515625 7.2139V10.6087C0.515625 11.3107 1.08668 11.8817 1.78867 11.8817H2.21301V7.63824H1.78867C1.63918 7.63824 1.49771 7.66885 1.36432 7.71641V7.2139C1.36432 3.70393 4.24784 0.848694 7.75781 0.848694C11.2678 0.848694 14.1513 3.70393 14.1513 7.2139V7.71641C14.0179 7.66885 13.8764 7.63824 13.727 7.63824H13.3026V11.8817H13.727C14.4289 11.8817 15 11.3107 15 10.6087V7.2139C15 3.23607 11.7356 0 7.75781 0Z" fill="#04B8AD"/>
+									<path d="M4.33945 6.79297H3.9151C3.44637 6.79297 3.06641 7.17293 3.06641 7.64166V11.8851C3.06641 12.3539 3.44637 12.7338 3.9151 12.7338H4.33945C4.5738 12.7338 4.76379 12.5438 4.76379 12.3095V7.21732C4.76379 6.98296 4.5738 6.79297 4.33945 6.79297Z" fill="#04B8AD"/>
+									<path d="M11.6026 6.79297H11.1783C10.9439 6.79297 10.7539 6.98296 10.7539 7.21732V12.3095C10.7539 12.5438 10.9439 12.7338 11.1783 12.7338H11.6026C12.0713 12.7338 12.4513 12.3539 12.4513 11.8851V7.64166C12.4513 7.17293 12.0713 6.79297 11.6026 6.79297Z" fill="#04B8AD"/>
+								</svg>
+								span Platea euismod.txt
+					form.item__comment
+						h3 Оставить комментарий:
+						textarea
+						.comment__bottom
+							.load-file
+								input(type="file")#f1
+								label(for="f1")
+									<svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M6.92321 11.7106L9.19648 9.41463C9.42618 9.17463 9.42618 8.79862 9.18856 8.56662C8.95886 8.33463 8.58658 8.33463 8.35688 8.56662L7.09747 9.84663V5.99062C7.09747 5.65462 6.83608 5.39062 6.51133 5.39062C6.18658 5.39062 5.91727 5.65462 5.91727 5.99062V9.84663L4.65787 8.56662C4.42816 8.33463 4.05589 8.33463 3.82618 8.56662C3.59648 8.79862 3.59648 9.17463 3.82618 9.41463L6.09153 11.7106C6.14698 11.7666 6.21034 11.8066 6.28163 11.8386C6.35292 11.8706 6.43212 11.8866 6.51133 11.8866C6.59054 11.8866 6.66183 11.8706 6.73311 11.8386C6.8044 11.8066 6.86777 11.7666 6.92321 11.7106ZM12.6625 5.62049C12.8487 5.61834 13.0514 5.616 13.2356 5.616C13.4416 5.616 13.6 5.776 13.6 5.976V12.408C13.6 14.392 12 16 10.0356 16H3.73861C1.67129 16 0 14.312 0 12.232V3.608C0 1.624 1.59208 0 3.57228 0H7.80198C8 0 8.16634 0.168 8.16634 0.368V2.944C8.16634 4.408 9.35446 5.608 10.8119 5.616C11.1466 5.616 11.4462 5.61854 11.7077 5.62076C11.9102 5.62248 12.09 5.624 12.2455 5.624C12.3583 5.624 12.5044 5.62231 12.6625 5.62049ZM12.8839 4.45378C12.2336 4.45618 11.4661 4.45378 10.914 4.44818C10.038 4.44818 9.31641 3.71938 9.31641 2.83458V0.725783C9.31641 0.380983 9.73066 0.209783 9.9667 0.458583C10.5768 1.09865 11.5107 2.07961 12.3 2.90866C12.6195 3.2443 12.9154 3.55504 13.1564 3.80818C13.3877 4.05058 13.2182 4.45298 12.8839 4.45378Z" fill="#9EA0B4"/>
+									</svg>
+									span Выберите файл
+								.file-name Файл не выбран
+							button(type="submit") Отправить
+					.item__comment_sent
+						h3 Ваш комментарий:
+						p Platea euismod tortor scelerisque libero duis eleifend eros, ipsum placerat nascetur mi ligula nam. Condimentum aliquam eget quis pretium non nunc mattis maximus lobortis, lacus torquent aliquet dignissim tellus habitasse maecenas congue, euismod ad morbi pellentesque sapien pharetra litora facilisis. Convallis ridiculus accumsan conubia aliquet ut dictumst, mi pharetra augue eleifend consectetur, ultrices suscipit finibus etiam sodales.
+						.files
+							a(href="#" download).files__item
+								<svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M10.4396 1.01172H4.45139C2.59787 1.01172 1 2.48826 1 4.31071V13.8096C1 15.7346 2.49254 17.2483 4.45139 17.2483H11.6422C13.4967 17.2483 15 15.632 15 13.8096V5.67932L10.4396 1.01172Z" stroke="#04B8AD" stroke-linecap="round" stroke-linejoin="round"/>
+									<path d="M10.2031 1V3.57355C10.2031 4.8298 11.2375 5.84896 12.5158 5.85161C13.7004 5.85427 14.913 5.85515 14.9949 5.84984" stroke="#04B8AD" stroke-linecap="round" stroke-linejoin="round"/>
+									<path d="M7.65322 12.7369V6.92188" stroke="#04B8AD" stroke-linecap="round" stroke-linejoin="round"/>
+									<path d="M5.09766 10.2109L7.65244 12.7332L10.2081 10.2109" stroke="#04B8AD" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+								span Platea euismod.txt
+			.rht
+				.main-task-item__information
+					h2 Информация
+					p <span>Курс:</span> Introduction to Data Science ...
+					p <span>Выполнил:</span> Артем Яшин
+					p <span>Прохождение курса:</span> 15/25
+					h3 Статус:
+					input(type="radio" name="status" checked disabled)#rd1
+					label(for="rd1") Ожидает проверки
+					input(type="radio" name="status" disabled)#rd2
+					label(for="rd2") Проверено
+
+	include footer.pug
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

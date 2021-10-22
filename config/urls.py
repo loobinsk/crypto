@@ -6,9 +6,11 @@ from django.conf.urls.i18n import i18n_patterns
 
 
 urlpatterns = i18n_patterns(
+    path('', include('home.urls'), name='home'),
+    path('dashboard/', include('home.auth_urls')),
+    path('news/', include('forum.urls')),
     path('rosetta/', include('rosetta.urls')),
     path('account/', include('groups.urls'), name='login_pages'),
-    path('', include('home.urls'), name='home'),
     path('courses/', include('courses.urls'), name='catalog'),
     path('admin/', admin.site.urls),
     path('api/', include('courses.api.urls', namespace='api')),

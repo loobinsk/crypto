@@ -1,0 +1,121 @@
+doctype html
+html(lang="en")
+	head
+		title SiteDevelope by Vlas
+
+		meta(charset="UTF-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0")
+		meta(name="description" content="Description of website")
+		meta(name="keywords" content="Website")
+		link(rel="shortcut icon" href="img/favicon.png" type="image/png")
+
+		<!-- Gilroy FONT -->
+		link(rel="stylesheet" href="fonts/Gilroy/stylesheet.css")
+
+		<!-- NeueMachina FONT -->
+		link(rel="stylesheet" href="fonts/NeueMachina/stylesheet.css")
+
+		<!-- Slick SLIDER -->
+		//- link(rel="stylesheet" href="css/slick/slick-theme.css")
+		//- link(rel="stylesheet" href="css/slick/slick.css")
+		<!-- Slick SLIDER -->
+
+		//- <script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-cartesian.min.js"></script>
+		link(rel="stylesheet" href="css/normalize.css")
+		link(rel="stylesheet" href="css/animate.css")
+		link(rel="stylesheet" href="css/style.css")
+
+	body
+		.menu__mob
+		.circles
+			.circles__item.circles__item_1
+				img(data-src="img/circle1.png" alt="circle")
+			.circles__item.circles__item_2
+				img(data-src="img/circle2.png" alt="circle")
+		header.header
+			a(href="#").header__logo
+				img(data-src="img/logo-mini.svg" alt="Logo")
+			.header__profile
+				.header__profile-back
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.28906 11.9983L13.2991 18.0083L14.7131 16.5943L10.1131 11.9943L14.7131 7.39428L13.2991 5.98828L7.28906 11.9983Z" fill="white"/></svg>
+					span Назад
+				.header__profile-title Мой профиль
+			//- .header__search
+				<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.51527 7.44046C1.51371 4.23366 4.11207 1.63277 7.31887 1.63122C10.5257 1.62966 13.1266 4.22802 13.1281 7.43482C13.1297 10.6416 10.5313 13.2425 7.32451 13.2441C4.11771 13.2456 1.51683 10.6473 1.51527 7.44046ZM7.31814 0.131216C3.28292 0.133177 0.0133079 3.40596 0.0152681 7.44119C0.0172284 11.4764 3.29002 14.746 7.32524 14.7441C8.98588 14.7433 10.5169 14.1885 11.7435 13.2546L13.9266 15.4299C14.22 15.7223 14.6948 15.7214 14.9872 15.428C15.2796 15.1346 15.2787 14.6597 14.9853 14.3673L12.8386 12.2282C13.9541 10.9447 14.629 9.26815 14.6281 7.43409C14.6262 3.39886 11.3534 0.129256 7.31814 0.131216Z" fill="#EBEBEF"/></svg>
+				input(type="text" placeholder="Search...")
+			.header__info
+				button.header__favorite
+					<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.08 0.000127738C11.5848 0.000127738 12.0888 0.0713279 12.568 0.232128C15.5209 1.19213 16.5849 4.43214 15.6961 7.26415C15.1921 8.71135 14.3681 10.0322 13.2888 11.1114C11.744 12.6074 10.0488 13.9354 8.22404 15.0794L8.02403 15.2002L7.81603 15.0714C5.98483 13.9354 4.28002 12.6074 2.72082 11.1034C1.64882 10.0242 0.824015 8.71135 0.312014 7.26415C-0.591988 4.43214 0.472015 1.19213 3.45682 0.215328C3.68882 0.135328 3.92802 0.079328 4.16802 0.0481279H4.26402C4.48882 0.0153278 4.71203 0.000127738 4.93603 0.000127738H5.02403C5.52803 0.0153278 6.01603 0.103328 6.48883 0.264128H6.53603C6.56803 0.279328 6.59203 0.296129 6.60803 0.311329C6.78483 0.368129 6.95203 0.432129 7.11203 0.520129L7.41603 0.656129C7.48949 0.695307 7.57194 0.75517 7.6432 0.806906C7.68835 0.839686 7.72901 0.869203 7.76003 0.88813C7.77309 0.895833 7.78636 0.903579 7.79974 0.911389C7.86833 0.95143 7.93978 0.993139 8.00003 1.03933C8.88884 0.360129 9.96804 -0.00787228 11.08 0.000127738ZM13.2071 5.76014C13.5351 5.75134 13.8151 5.48814 13.8391 5.15134V5.05614C13.8631 3.93534 13.1839 2.92013 12.1511 2.52813C11.8231 2.41533 11.4631 2.59213 11.3431 2.92813C11.2311 3.26413 11.4071 3.63213 11.7431 3.75134C12.2559 3.94334 12.5991 4.44814 12.5991 5.00734V5.03214C12.5839 5.21534 12.6391 5.39214 12.7511 5.52814C12.8631 5.66414 13.0311 5.74334 13.2071 5.76014Z" fill="#9EA0B4"/></svg>
+				button.header__bell.header__bell_message
+					<svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.7739 5.77698C13.7739 6.84454 14.056 7.47377 14.677 8.19889C15.1475 8.7331 15.2979 9.41884 15.2979 10.1628C15.2979 10.9059 15.0538 11.6113 14.5646 12.184C13.9243 12.8706 13.0212 13.309 12.0995 13.3852C10.7639 13.499 9.42741 13.5949 8.0732 13.5949C6.71815 13.5949 5.38252 13.5375 4.0469 13.3852C3.12438 13.309 2.2213 12.8706 1.58178 12.184C1.09265 11.6113 0.847656 10.9059 0.847656 10.1628C0.847656 9.41884 0.998875 8.7331 1.46858 8.19889C2.10894 7.47377 2.37251 6.84454 2.37251 5.77698V5.41485C2.37251 3.98516 2.72902 3.05029 3.46315 2.13512C4.55462 0.800456 6.3042 0 8.03518 0H8.11122C9.87937 0 11.6855 0.83898 12.7584 2.231C13.4546 3.12734 13.7739 4.02282 13.7739 5.41485V5.77698ZM5.58594 15.3521C5.58594 14.924 5.97877 14.728 6.34203 14.6441C6.76696 14.5542 9.35626 14.5542 9.7812 14.6441C10.1445 14.728 10.5373 14.924 10.5373 15.3521C10.5162 15.7596 10.2771 16.1209 9.94678 16.3503C9.51847 16.6842 9.01581 16.8956 8.49035 16.9718C8.19974 17.0095 7.9142 17.0103 7.63372 16.9718C7.10742 16.8956 6.60476 16.6842 6.1773 16.3494C5.84613 16.1209 5.60706 15.7596 5.58594 15.3521Z" fill="#9EA0B4"/></svg>
+					ul.header__bell-info
+						li
+							a(href="#") 5 новых сообщений
+						li
+							a(href="#") Учетная запись
+				.header__persone
+					ul.persone__menu
+						li
+							a(href="#") Публичный профиль
+						li
+							a(href="#") Учетная запись
+						li
+							a(href="#") Настройки выплаты
+						li
+							a(href="#") Выйти
+					.persone__info
+						h3.name Иван Иванов
+						.persone__position.persone__position_teacher
+							<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 12V6.75H5.25L2.83725 9.16497C3.66972 10.0162 4.80935 10.4973 6 10.5C7.90459 10.4972 9.60114 9.29564 10.236 7.49999H10.2495C10.3354 7.25595 10.4004 7.00505 10.4438 6.75H11.9528C11.5748 9.7499 9.02364 11.9999 6 12H5.9925C4.40157 12.0047 2.87487 11.3727 1.75275 10.245L0 12ZM1.5555 5.25001H0.0465C0.424312 2.25125 2.97375 0.00166865 5.99625 3.05246e-05H6C7.59122 -0.00506079 9.11829 0.626935 10.2405 1.75504L12 3.05246e-05V5.25001H6.75L9.1665 2.83503C8.33317 1.98278 7.19197 1.50165 6 1.50005C4.09541 1.50286 2.39886 2.70437 1.764 4.50002H1.7505C1.66392 4.74385 1.59892 4.99481 1.55625 5.25001H1.5555Z" fill="#A5E7E3"/></svg>
+							span Преподаватель
+					.persone__photo
+						img(data-src="img/photo-pers.jpg" alt="Photo")
+					.persone__dots
+						<svg width="4" height="20" viewBox="0 0 4 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<circle cx="2" cy="2" r="2" fill="white"/>
+							<circle cx="2" cy="10" r="2" fill="white"/>
+							<circle cx="2" cy="18" r="2" fill="white"/>
+						</svg>
+			.header__burger
+				.line
+				.line
+				.line
+
+
+		include aside.pug
+
+		
+		block content
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			

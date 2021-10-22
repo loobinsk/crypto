@@ -1,0 +1,94 @@
+extends header.pug
+
+block content
+
+	<script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-core.min.js"></script>
+	<script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-base.min.js"></script>
+	main.main-statistics
+		ul.main-statistics__top
+			li.li_active
+				a(href="statistics.html") Отчеты
+			li
+				a(href="statisics-students.html") Студенты
+			li
+				a(href="statistics-reviews.html") Отзывы
+			li
+				a(href="#") Трафик
+		h3 Получайте аналитические данные о ваших успехах.
+		.main-statistics__block
+			.block__lft
+				.lft__item.lft__item_active
+					.title Общий доход
+					b 0,00 т
+					p <span>0,00 т</span> в этом месяце
+				.lft__item
+					.title
+						span Общее число <br />регистраций
+						.i
+							<svg width="2" height="10" viewBox="0 0 2 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M0.078125 1.19531C0.078125 1.67731 0.469125 2.07031 0.948125 2.07031C1.44113 2.07031 1.83312 1.67731 1.83312 1.19531C1.83312 0.713313 1.44113 0.320312 0.958125 0.320312C0.473125 0.320312 0.078125 0.713313 0.078125 1.19531ZM1.82422 4.36811C1.82422 3.88611 1.43122 3.49311 0.949219 3.49311C0.467219 3.49311 0.0742188 3.88611 0.0742188 4.36811V8.78811C0.0742188 9.27011 0.467219 9.66311 0.949219 9.66311C1.43122 9.66311 1.82422 9.27011 1.82422 8.78811V4.36811Z" fill="white"/>
+							</svg>
+							.i__block Здесь представлено общее количество регистраций на ваши опубликованные и снятые с публикации курсы. К примеру, если студент зарегистрировался на два ваших курса, это будет учитываться как две отдельные регистрации.
+					b 0,00 т
+					p <span>0,00 т</span> в этом месяце
+				.lft__item
+					.title
+						span Рейтинг <br />преподавателей
+						.i
+							<svg width="2" height="10" viewBox="0 0 2 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M0.078125 1.19531C0.078125 1.67731 0.469125 2.07031 0.948125 2.07031C1.44113 2.07031 1.83312 1.67731 1.83312 1.19531C1.83312 0.713313 1.44113 0.320312 0.958125 0.320312C0.473125 0.320312 0.078125 0.713313 0.078125 1.19531ZM1.82422 4.36811C1.82422 3.88611 1.43122 3.49311 0.949219 3.49311C0.467219 3.49311 0.0742188 3.88611 0.0742188 4.36811V8.78811C0.0742188 9.27011 0.467219 9.66311 0.949219 9.66311C1.43122 9.66311 1.82422 9.27011 1.82422 8.78811V4.36811Z" fill="white"/>
+							</svg>
+							.i__block Рейтинг вычисляется на основании оценок, выставляемых студентами, и некоторых других факторов, в том числе возраста, благонадежности и достоверности; это гарантирует максимально точное соответствие фактическому качеству материалов.
+					b 0,00 т
+					p <span>0,00 т</span> в этом месяце
+			.block__center
+				//- p.p-nothing Нет данных для отображения
+				<div id="chart1" class="charts" style="width: 100%; height: 100%;"></div>
+			.block__center
+				<div id="chart2" class="charts" style="width: 100%; height: 100%;"></div>
+			.block__center
+				<div id="chart3" class="charts" style="width: 100%; height: 100%;"></div>
+			.block__rht.select
+				.select__head
+					span Последние 12 месяцев
+					<svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M10.9167 1.36628L5.96074 6.32702L1 1.37109" stroke="#4491FF" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+				ul.select__body
+					li Последние 7 дней
+					li Последние 30 дней
+					li Последние 12 месяцев
+					li Все время
+			<script>if( document.getElementById('chart1') ){var data = [["January", 10000],["February", 12000],["March", 18000],["April", 11000],["May", 9000]];chart = anychart.line();var series = chart.line(data);chart.container("chart1");chart.draw();}if( document.getElementById('chart2') ){var data = [["January", 10000],["February", 12000],["March", 12000],["April", 11000],["May", 9000]];chart = anychart.line();var series = chart.line(data);chart.container("chart2");chart.draw();}if( document.getElementById('chart3') ){var data = [["January", 10000],["February", 12000],["March", 18000],["April", 11000],["May", 9000],["June", 100000],["July", 900],];chart = anychart.line();var series = chart.line(data);chart.container("chart3");chart.draw();}</script>
+				
+		a(href="#").report-money Отчет о доходах
+
+	include footer.pug
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

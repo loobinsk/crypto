@@ -23,7 +23,7 @@
                 <input required autocomplete="off" placeholder="Повторите пароль" type="text" name='password2'>
                 <div class="file">
                   <label for="fl1">Фотография</label>
-                  <input type="file" id="fl1" name="image">
+                  <input required type="file" id="fl1" name="image">
                 </div>
                 {% if error %}
                   <p style="color: #eb5959;">{{ error }}</p>

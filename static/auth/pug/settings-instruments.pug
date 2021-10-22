@@ -1,0 +1,105 @@
+extends header.pug
+
+block content
+
+	main.main-settings-instruments
+		.popup.main-settings-profile__pass
+			.popup__bgd
+			.popup__content
+				.content__head
+					span Изменить пароль
+					<svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<g opacity="0.5">
+						<path d="M15.5143 13.2734L20.1105 17.8696L18.5785 19.4017L13.9823 14.8055L9.38607 19.4017L7.85401 17.8696L12.4502 13.2734L7.85401 8.67724L9.38607 7.14518L13.9823 11.7414L18.5785 7.14518L20.1105 8.67724L15.5143 13.2734Z" fill="white"/>
+						</g>
+					</svg>
+				.content__body
+					label
+						p Адрес электронной почты
+						input(type="text" placeholder="mail.mail@gmail.com")
+					label
+						p Новый пароль
+						input(type="text" placeholder="Введите новый пароль")
+					label
+						p Подтверждение нового пароля
+						input(type="text" placeholder="Введите новый пароль ещё раз")
+					.buttons
+						button.popup__button.popup__close Отменить
+						button.popup__button.popup__link Сохранить
+		.popup.main-settings-profile__mail
+			.popup__bgd
+			.popup__content
+				.content__head
+					span Изменить адрес электронной почты
+					<svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<g opacity="0.5">
+						<path d="M15.5143 13.2734L20.1105 17.8696L18.5785 19.4017L13.9823 14.8055L9.38607 19.4017L7.85401 17.8696L12.4502 13.2734L7.85401 8.67724L9.38607 7.14518L13.9823 11.7414L18.5785 7.14518L20.1105 8.67724L15.5143 13.2734Z" fill="white"/>
+						</g>
+					</svg>
+				.content__body
+					label
+						p Адрес электронной почты
+						input(type="text" placeholder="mail.mail@gmail.com")
+					label
+						p Пароль
+						input(type="text" placeholder="Введите пароль")
+					p.inf В целях безопасности при изменении адреса электронной почты сохраненные данные о кредитной карте будут удалены.
+					.buttons
+						button.popup__button.popup__close Отменить
+						button.popup__button.popup__link Сохранить
+		ul.main-settings__top
+			li
+				a(href="settings.html") Настройки профиля
+			li
+				a(href="settings-profile.html") Учетная запись
+			li
+				a(href="settings-payments.html") Настройка выплаты
+			li.li_active
+				a(href="settings-instruments.html") Инструменты
+		.main-settings-instruments__block
+			h2 Проверка видео
+			p Получите бесплатный отзыв от экспертов CryptoChip по видео о качестве, звуке и подаче материала.
+			.main-settings-instruments__blue
+				h3 Мы берем на себя производственную проверку, чтобы вы могли сосредоточиться на преподаваннии
+				img(src="img/st1.png" alt="photo" width="460")
+				ul
+					li Получайте персонализированные советы по оборудованию и обустройству места для съемки
+					li Повысьте качество записи перед окончательным монтажем вашего курса
+					li Овладейте тонкостями публичного выступления и станьте популярным среди студентов преподавателем
+			h3 Прежде чем начать, подготовьте микрофон и камеру для создания вашего курса.
+			.buttons
+				button Какое оборудование мне потребуется?
+				button У меня есть оборудование
+
+
+
+
+	include footer.pug
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

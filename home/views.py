@@ -1,10 +1,16 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from courses.models import CategoryByType, CategoryBySkill
 from courses.models import Course, CourseReview
 from groups.models import Teacher, Student
+from django.http import HttpResponse
+from .auth_views import dashboard
 
 
 def homepage(request):
+
+	if request.user.is_authenticated:
+		return redirect('dashboard')
+	
 	template = 'index.html'
 
 
@@ -62,7 +68,8 @@ def homepage(request):
 
 		#teachers
 		'all_teachers': all_teachers,
-		}
+	}
+
 	return render(request, template, context)
 
 def about(request):
