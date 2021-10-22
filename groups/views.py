@@ -34,7 +34,10 @@ def register(request):
 				new_user.save()
 				new_student = Student(
 								user=new_user,
-								image=image,)
+								image=image,
+								first_name=first_name,
+								email=email,
+								last_name=last_name,)
 				new_student.save()
 				auth_login(request, new_user)
 				return redirect('homepage')
