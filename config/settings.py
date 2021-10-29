@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'tasks',
     'groups',
     'rosetta',
+    'user_messages',
     'spurl',
     'rest_framework',
     'django.contrib.humanize',

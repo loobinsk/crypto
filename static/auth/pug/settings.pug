@@ -18,7 +18,8 @@ block content
 				.item__avatar
 					img(src="img/avatar.jpg" lat="Photo")
 				.item__load-photo
-					button Загрузить новое фото
+					input(type="file")#filePhoto1
+					label(for="filePhoto1") Загрузить новое фото
 					.i
 						<svg width="4" height="12" viewBox="0 0 4 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.945012 1.42695C0.945012 2.00535 1.41421 2.47695 1.98901 2.47695C2.58061 2.47695 3.05101 2.00535 3.05101 1.42695C3.05101 0.848553 2.58061 0.376953 2.00101 0.376953C1.41901 0.376953 0.945012 0.848553 0.945012 1.42695ZM3.04141 5.23442C3.04141 4.65602 2.56981 4.18442 1.99141 4.18442C1.41301 4.18442 0.941406 4.65602 0.941406 5.23442V10.5384C0.941406 11.1168 1.41301 11.5884 1.99141 11.5884C2.56981 11.5884 3.04141 11.1168 3.04141 10.5384V5.23442Z" fill="white"/></svg>
 						.i__block Минимум 200x200px, <br />максимум 6000х6000px
@@ -54,17 +55,21 @@ block content
 					label
 						p Язык
 						.select
-							<svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.9167 0.995183L5.96074 5.95592L1 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"/></svg>
-							select
-								option(value="Русский") Русский
-								option(value="Русский") Русский
+							.select__head
+								span Русский
+								<svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.9167 0.995183L5.96074 5.95592L1 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"/></svg>
+							ul.select__body
+								li Русский
+								li NeРусский
 					label
 						p Местоположение
 						.select
-							<svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.9167 0.995183L5.96074 5.95592L1 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"/></svg>
-							select
-								option(value="Русский") Россия
-								option(value="Русский") Украина
+							.select__head
+								span Русский
+								<svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.9167 0.995183L5.96074 5.95592L1 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"/></svg>
+							ul.select__body
+								li Русский
+								li NeРусский
 			.main-settings__item
 				h2 Социальные сети
 				.form__block
