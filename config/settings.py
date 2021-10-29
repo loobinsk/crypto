@@ -16,7 +16,7 @@ SECRET_KEY = 'k!8gzk-8ohs-9&=96mnqvuqh)01f14qf&hi9!==7y)1nbusxdg'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '192.168.43.77']
+ALLOWED_HOSTS = ['127.0.0.1', '192.168.43.77', '163.172.87.252', 'cryptochip.space']
 
 
 LOGIN_REDIRECT_URL = reverse_lazy('dashboard')
