@@ -10,6 +10,9 @@ urlpatterns = i18n_patterns(
     path('dashboard/', include('home.auth_urls')),
     path('news/', include('forum.urls')),
     path('messages/', include('user_messages.urls')),
+    path('tasks/', include('tasks.urls')),
+
+
     path('rosetta/', include('rosetta.urls')),
     path('account/', include('groups.urls'), name='login_pages'),
     path('courses/', include('courses.urls'), name='catalog'),

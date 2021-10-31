@@ -13,9 +13,12 @@ class Question(models.Model):
 
 class AnswerToQuestion(models.Model):
 	question = models.ForeignKey(Question, on_delete=models.CASCADE, related_name='answers_to_question')
-	title = models.CharField(max_length=255)
+	title = models.TextField()
 	created = models.DateTimeField(auto_now_add=True)
 	user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+	class Meta:
+		ordering = ['-created']
 
 class Announcement(models.Model):
 	user = models.ForeignKey(User, on_delete=models.CASCADE)

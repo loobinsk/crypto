@@ -2494,6 +2494,7 @@ main {
   background: #04b8ad url(../img/check.svg) no-repeat;
   background-position: center
 }
+
 .main-task-item__block h2 {
   font-family: Neue Machina;
   font-style: normal;
@@ -2503,6 +2504,7 @@ main {
   color: #04b8ad;
   margin-right: 15px
 }
+
 .main-task-item__block .item__top {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2647,7 +2649,7 @@ main {
 }
 .main-task-item .item__comment {
   margin-top: 48px;
-  margin-left: 27px
+  /*margin-left: 27px*/
 }
 .main-task-item .item__comment h3 {
   font-weight: 700;
@@ -8366,7 +8368,7 @@ label textarea {
     width: 100%;
     font-size: 14px
   }
-  .sides {
+  .lft {
     display: block
   }
   .index-block1 img {

@@ -1,0 +1,37 @@
+{% extends 'auth_index.html' %}
+{% load static %}
+
+{% block content %}
+  <main class="main-task-item">
+    <div class="sides">
+      <div class="lft">
+        <div class="main-task-item__block">
+          <div class="item__top">
+            <h2>{{ question.author.student_related.get_full_name }}</h2>
+          </div>
+          <div class="item__task"><span>{{ question.created }}</span>
+          </div>
+          <div class="item__answer">
+            <p>{{ question.title }}</p>
+          </div>
+          <form action="." method="post" class="item__comment">
+          	{% csrf_token %}
+            <h3>Добавить ответ:</h3>
+            <textarea name="title"></textarea>
+            <div class="comment__bottom">
+              <button type="submit">Отправить</button>
+            </div>
+          </form>
+          <div class="item__comment_sent">
+          	<h2>Ответы:</h2>
+          	<br>
+            {% for i in question.answers_to_question.all %}
+	            <h3>{{ i.user.student_related.get_full_name }}</h3>
+	            <p>{{ i.title }}<br>{{ i.created }}</p>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+{% endblock %}

@@ -69,6 +69,9 @@ if( document.querySelector('.input__files') ){
 }
 
 if( document.querySelectorAll('input') ){
+
+	
+
 	document.querySelectorAll('input').forEach((input) => {
 		if( input.getAttribute('maxlength') ){
 			input.addEventListener('keyup', function () {
@@ -619,10 +622,41 @@ else{
 		}
 	}
 
+
+	if( document.querySelector('.main-message__block') ){
+
+		let mainDialog = document.querySelector('.main-message__block').querySelectorAll('.main-message__dialog');
+
+		document.querySelectorAll('.main-message__dialog').forEach((item) => {
+			item.classList.add('main-message__dialog_active')
+		})
+		setTimeout(function () {
+			document.querySelectorAll('.main-message__dialog').forEach((item) => {
+				item.classList.remove('main-message__dialog_active')
+			})
+		}, 1)
+		document.querySelector('.main-message__block').querySelectorAll('.main-message__dialog_active').forEach((mess, messNum) => {
+			mess.querySelector('.dialog__block').scrollTop = mess.querySelector('.dialog__block').scrollHeight
+		})
+		setTimeout(function () {
+			document.querySelectorAll('.main-message__dialog').forEach((item, itemNum) => {
+				if( itemNum == 0 ){
+					item.classList.add('main-message__dialog_active')
+				}
+			})
+		}, 2)
+	}
+
+
+
 	dialogsItem.forEach((diItem, y) => {
 
+
 		var itm;
+		
 		diItem.onclick = function () {
+
+			
 
 			this.closest('.sides').querySelector('.rht').classList.remove('rht_hidden')
 
@@ -635,15 +669,17 @@ else{
 
 			this.classList.add('dialogs__item_active')
 
+
+
 			dialogsItemActive.forEach((diItem) => {
 				for(let j = 0; j < messageDialog.length; j++){
 					messageDialog[j].classList.remove('main-message__dialog_active')
 				}
 			})
 			messageDialog[y].classList.add('main-message__dialog_active')
-
-
 		}
+
+
 	})
 
 

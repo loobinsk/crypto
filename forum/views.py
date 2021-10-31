@@ -21,6 +21,25 @@ def news(request):
 	}
 	return render(request, template, context)
 
+def question_detail(request, pk):
+	template = 'auth_pages/question.html'
+
+	question = Question.objects.get(pk=pk)
+
+	if request.method == 'POST':
+		title = request.POST['title']
+		new_answr_to_qs = AnswerToQuestion(
+			question=question,
+			user=request.user,
+			title=title,
+		)
+		new_answr_to_qs.save()
+
+	context = {
+		'question': question,
+	}
+	return render(request, template, context)
+
 def delete_question(request, pk):
 	quetsion = Question.objects.get(pk=pk)
 	quetsion.delete()
