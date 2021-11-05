@@ -4,35 +4,19 @@
 {% block content %}
   <main class="main-tasks">
     <h2>Задания</h2>
-    <div class="main-tasks__item">
-      <div class="item__type">Курс</div>
-      <div class="item__name">Introduction to Data Science and Machine Learning</div>
-      <div class="item__new"><span>Новых:</span><b>16</b>
-      </div><a class="item__link" href="task-block.html">Перейти</a>
-    </div>
-    <div class="main-tasks__item">
-      <div class="item__type">Курс</div>
-      <div class="item__name">Introduction to Data Science and Machine Learning 2</div>
-      <div class="item__new"><span>Новых:</span><b>16</b>
-      </div><a class="item__link" href="task-block.html">Перейти</a>
-    </div>
-    <div class="main-tasks__item">
-      <div class="item__type">Курс</div>
-      <div class="item__name">Introduction to Data Science and Machine Learning</div>
-      <div class="item__new"><span>Новых:</span><b>16</b>
-      </div><a class="item__link" href="task-block.html">Перейти</a>
-    </div>
-    <div class="main-tasks__item">
-      <div class="item__type">Курс</div>
-      <div class="item__name">Introduction to Data Science and Machine Learning</div>
-      <div class="item__new"><span>Новых:</span><b>16</b>
-      </div><a class="item__link" href="task-block.html">Перейти</a>
-    </div>
-    <div class="main-tasks__item">
-      <div class="item__type">Курс</div>
-      <div class="item__name">Introduction to Data Science and Machine Learning</div>
-      <div class="item__new"><span>Новых:</span><b>16</b>
-      </div><a class="item__link" href="task-block.html">Перейти</a>
-    </div>
+    {% if courses %}
+    {% for i in courses %}
+      <div class="main-tasks__item">
+        <div class="item__type">Курс</div>
+        <div class="item__name">{{ i.name }}</div>
+        <div class="item__new">
+          <span>Новых:</span><b>16</b>
+        </div>
+        <a class="item__link" href="{% url 'course_task' i.pk %}">Перейти</a>
+      </div>
+    {% endfor %}
+    {% else %}
+      <div class="item__type">К сожалению, у вас пока нет активных курсов.</div>
+    {% endif %}
   </main>
 {% endblock %}

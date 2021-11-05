@@ -1,5 +1,5 @@
 {% extends 'auth_index.html' %}
-{% load static %}
+{% load static humanize %}
 
 {% block content %}
   <main class="main-message">
@@ -26,7 +26,7 @@
                 </div>
                 <div class="item__message">{{ i.messages.last.msg_content }}</div>
               </div>
-              <div class="item__time">22:03</div>
+              <div class="item__time">{{ i.messages.last.created | naturaltime }}</div>
             </div>
           </a>
           {% endfor %}
@@ -47,7 +47,7 @@
               <ul class="header__bell-info">
                 <li><a href="#">Учетная запись</a>
                 </li>
-                <li><a href="#">Удалить диалог</a>
+                <li><a href="{% url 'delete_dialogue' dialogue.pk %}">Удалить диалог</a>
                 </li>
               </ul>
             </div>

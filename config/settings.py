@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'groups',
     'rosetta',
     'user_messages',
+    'settings',
     'spurl',
     'rest_framework',
     'django.contrib.humanize',

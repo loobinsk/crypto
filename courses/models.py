@@ -20,7 +20,7 @@ class Course(models.Model):
 	category_by_type = models.ForeignKey(CategoryByType, on_delete=models.CASCADE)
 	category_by_skill = models.ForeignKey(CategoryBySkill, on_delete=models.CASCADE)
 	name = models.CharField(_('Название'),max_length=255)
-	author = models.ForeignKey(Teacher, on_delete=models.CASCADE)
+	author = models.ForeignKey(Teacher, on_delete=models.CASCADE, related_name='course_teachers')
 	students = models.ManyToManyField(Student, related_name='students')
 	description = models.TextField(_('Описание'),)
 	price = models.IntegerField()

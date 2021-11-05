@@ -75,7 +75,7 @@
                   </div>
                 </div>
                 <div class="item__bottom">
-                  <div class="item__author"><a href="#">{{ i.author.student_related.get_full_name }}</a></div>
+                  <div class="item__author"><a href="#">{{ i.author.human.get_full_name }}</a></div>
                   <div class="item__data">{{ i.created | naturaltime }}</div><a class="item__answers">{{ i.answers_to_question.count }} ответ(ов)</a>
                   <div class="item__viewers"><svg width="17" height="13" viewBox="0 0 17 13" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g opacity="0.5">

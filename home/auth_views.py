@@ -9,7 +9,5 @@ from django.contrib.auth.decorators import login_required
 def dashboard(request):
 	template = 'auth_index.html'
 
-	student = Student.objects.get(user=request.user)
-
-	context = {'student': student}
+	context = {}
 	return render(request, template, context)

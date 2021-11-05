@@ -7,7 +7,7 @@ from django.contrib.auth import logout as logout_system
 from django.contrib.auth.models import User
 from django.views.decorators.csrf import csrf_protect
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Student
+from .models import Student, Human, Teacher
 
 
 
@@ -28,17 +28,15 @@ def register(request):
 					username=username, 
 					password=password,
 					first_name=first_name,
-					email=email,
-					last_name=last_name,)
+					last_name=last_name,
+					email=email,)
 
 				new_user.save()
-				new_student = Student(
+				new_human = Human(
 								user=new_user,
 								image=image,
-								first_name=first_name,
-								email=email,
-								last_name=last_name,)
-				new_student.save()
+								)
+				new_human.save()
 				auth_login(request, new_user)
 				return redirect('homepage')
 			except:

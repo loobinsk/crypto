@@ -46,10 +46,16 @@
             <li><a href="{% url 'logout' %}">Выйти</a></li>
           </ul>
           <div class="persone__info">
-            <h3 class="name">{{ request.user.student_related.get_full_name }}</h3>
+            <h3 class="name">{{ request.user.human.get_full_name }}</h3>
             <div class="persone__position persone__position_teacher"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 12V6.75H5.25L2.83725 9.16497C3.66972 10.0162 4.80935 10.4973 6 10.5C7.90459 10.4972 9.60114 9.29564 10.236 7.49999H10.2495C10.3354 7.25595 10.4004 7.00505 10.4438 6.75H11.9528C11.5748 9.7499 9.02364 11.9999 6 12H5.9925C4.40157 12.0047 2.87487 11.3727 1.75275 10.245L0 12ZM1.5555 5.25001H0.0465C0.424312 2.25125 2.97375 0.00166865 5.99625 3.05246e-05H6C7.59122 -0.00506079 9.11829 0.626935 10.2405 1.75504L12 3.05246e-05V5.25001H6.75L9.1665 2.83503C8.33317 1.98278 7.19197 1.50165 6 1.50005C4.09541 1.50286 2.39886 2.70437 1.764 4.50002H1.7505C1.66392 4.74385 1.59892 4.99481 1.55625 5.25001H1.5555Z" fill="#A5E7E3"/></svg><span>Преподаватель</span></div>
           </div>
-          <div class="persone__photo"><img data-src="{{ request.user.student_related.image.url }}" alt="Photo"></div>
+          <div class="persone__photo"><img data-src="
+            {% if request.user.human.image %}
+              {{ request.user.human.image.url }}
+            {% else %}
+              {% static 'auth/img/notfound.png' %}
+            {% endif %}" alt="Photo"></div>
+            
           <div class="persone__dots"><svg width="4" height="20" viewBox="0 0 4 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 <circle cx="2" cy="2" r="2" fill="white"/>
 <circle cx="2" cy="10" r="2" fill="white"/>
@@ -67,7 +73,7 @@
     {% include 'aside.html' %}
 {% block content %}
     <main class="main-index">
-      <h1>Привет, <b>{{ request.user.student_related.first_name }}!</b></h1>
+      <h1>Привет, <b>{{ request.user.first_name }}!</b></h1>
       <div class="index-block1">
         <div class="sides">
           <div class="lft">

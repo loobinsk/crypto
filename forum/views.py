@@ -25,6 +25,8 @@ def question_detail(request, pk):
 	template = 'auth_pages/question.html'
 
 	question = Question.objects.get(pk=pk)
+	question.views += 1
+	question.save()
 
 	if request.method == 'POST':
 		title = request.POST['title']
@@ -34,6 +36,7 @@ def question_detail(request, pk):
 			title=title,
 		)
 		new_answr_to_qs.save()
+		return redirect('question_detail', pk)
 
 	context = {
 		'question': question,

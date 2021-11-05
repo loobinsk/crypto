@@ -37,6 +37,15 @@ def courses_detail(request, pk):
 	return render(request, template, context)
 
 
+def course_task(request, pk):
+	template = 'auth_pages/task-block.html'
+
+	course = Course.objects.get(pk=pk)
+
+	context = {'course': course}
+	return render(request, template, context)
+
+
 @login_required
 @require_POST
 def review_like(request):
@@ -54,3 +63,4 @@ def review_like(request):
 		except:
 			pass
 	return JsonResponse({'status':'ok'})
+

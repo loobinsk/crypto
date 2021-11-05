@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Message, Dialogue
 from django.contrib.auth.models import User
 
@@ -39,3 +39,8 @@ def dialogue_detail(request, pk):
 	}
 
 	return render(request, template, context)
+
+def delete_dialogue(request, pk):
+	dialogue = Dialogue.objects.get(pk=pk)
+	dialogue.delete()
+	return redirect('messages')
