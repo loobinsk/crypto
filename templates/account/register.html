@@ -12,7 +12,8 @@
         <div class="wrapper">
           <div class="form-block1__sides">
             <div class="sides__lft">
-              <h2>Регистрация</h2>
+              <h2>Зарегистрироваться как учитель:</h2>
+              <a href=""><p style="color:#a5e7e3;">я ученик</p></a>
               <form action="{% url 'register' %}" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 <input required autocomplete="off" placeholder="Логин" type="text" name='username'>
@@ -32,7 +33,7 @@
               </form>
             </div>
             </div>
-          </div>
+          </div>color: #a5e7e3;
         </div>
       </section>
     </main>

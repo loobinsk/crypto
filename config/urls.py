@@ -12,6 +12,8 @@ urlpatterns = i18n_patterns(
     path('messages/', include('user_messages.urls')),
     path('tasks/', include('tasks.urls')),
     path('settings/', include('settings.urls')),
+    path('profile/', include('user_profile.urls')),
+    path('statistic/', include('statistic.urls')),
 
 
     path('rosetta/', include('rosetta.urls')),

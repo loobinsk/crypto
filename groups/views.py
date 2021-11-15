@@ -18,7 +18,10 @@ def register(request):
 		username = request.POST['username']
 		first_name = request.POST['first_name']
 		last_name = request.POST['last_name']
-		image = request.FILES['image']
+		try:
+			image = request.FILES['image']
+		except:
+			image = None
 		email = request.POST['email']
 		password = request.POST['password']
 		password2 = request.POST['password2']
@@ -37,6 +40,10 @@ def register(request):
 								image=image,
 								)
 				new_human.save()
+				new_teacher = Teacher(
+					human=new_human,
+					)
+				new_teacher.save()
 				auth_login(request, new_user)
 				return redirect('homepage')
 			except:

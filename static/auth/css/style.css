@@ -4953,6 +4953,11 @@ label textarea {
 .main-profile .courses__edit span {
   margin-left: 10px
 }
+
+.error_message{
+  color: red;
+}
+
 .main-profile .archive__top {
   background: rgba(141,188,255,.05);
   -webkit-backdrop-filter: blur(200px);

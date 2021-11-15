@@ -4,7 +4,7 @@ from courses.models import Course
 def tasks(request):
 	template = 'auth_pages/tasks.html'
 
-	courses = Course.objects.filter(author=request.user.human.teacher_human)
+	courses = Course.objects.filter(author=request.user, active=True)
 	
 	context = {
 		'courses': courses,

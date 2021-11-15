@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'settings',
     'spurl',
     'rest_framework',
+    'user_profile',
     'django.contrib.humanize',
     'django.contrib.admin',
     'django.contrib.auth',

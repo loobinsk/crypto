@@ -40,8 +40,8 @@
         </button>
         <div class="header__persone">
           <ul class="persone__menu">
-            <li><a href="#">Публичный профиль</a></li>
-            <li><a href="#">Учетная запись</a></li>
+            <li><a href="{% url 'profile' request.user.pk %}">Публичный профиль</a></li>
+            <li><a href="{% url 'settings' %}">Учетная запись</a></li>
             <li><a href="#">Настройки выплаты</a></li>
             <li><a href="{% url 'logout' %}">Выйти</a></li>
           </ul>
