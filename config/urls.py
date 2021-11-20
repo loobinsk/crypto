@@ -14,6 +14,7 @@ urlpatterns = i18n_patterns(
     path('settings/', include('settings.urls')),
     path('profile/', include('user_profile.urls')),
     path('statistic/', include('statistic.urls')),
+    path('create_course/', include('create_course.urls')),
 
 
     path('rosetta/', include('rosetta.urls')),

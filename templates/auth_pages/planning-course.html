@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 
+{% load static %}
+
 <head>
-  <title>SiteDevelope by Vlas</title>
+  <title>CryptoChip</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Description of website">
   <meta name="keywords" content="Website">
-  <link rel="shortcut icon" href="img/favicon.png" type="image/png">
+  <link rel="shortcut icon" href="{% static 'auth/img/favicon.png' %}" type="image/png">
   <!-- Gilroy FONT -->
-  <link rel="stylesheet" href="fonts/Gilroy/stylesheet.css">
+  <link rel="stylesheet" href="{% static 'auth/fonts/Gilroy/stylesheet.css' %}">
   <!-- NeueMachina FONT -->
-  <link rel="stylesheet" href="fonts/NeueMachina/stylesheet.css">
+  <link rel="stylesheet" href="{% static 'auth/fonts/NeueMachina/stylesheet.css' %}">
   <!-- Slick SLIDER -->
   <!-- Slick SLIDER -->
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/animate.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="{% static 'auth/css/normalize.css' %}">
+  <link rel="stylesheet" href="{% static 'auth/css/animate.css' %}">
+  <link rel="stylesheet" href="{% static 'auth/css/style.css' %}">
 </head>
 
 <body class="planning-course" id="planning-course-id">
   <div class="planning-course__header">
-    <a class="planning-course__logo" href="index.html">
+    <a class="planning-course__logo" href="/">
       <svg width="31" height="34" viewBox="0 0 31 34" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect x="11.6914" width="2.50539" height="33.6836" rx="1.2527" fill="#04B8AD" />
         <rect x="7.79688" y="15.1719" width="2.50539" height="17.2594" rx="1.2527" fill="#04B8AD" />
@@ -69,9 +71,9 @@
         fill="#04B8AD" />
       </svg>
     </a>
-    <div class="planning-course__text">Introduction to Data Science and Machine Learning</div>
+    <div class="planning-course__text">{{ course.name }}</div>
     <button class="planning-course__draft">Черновик</button>
-    <a class="planning-course__setting" href="#">
+    <a class="planning-course__setting" href="/">
       <svg width="17" height="19" viewBox="0 0 17 19" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g opacity="0.4">
           <path fill-rule="evenodd" clip-rule="evenodd" d="M16.0179 10.4582C16.3379 10.6298 16.5848 10.9007 16.7585 11.1717C17.0969 11.7316 17.0694 12.418 16.7402 13.0231L16.1002 14.1068C15.7619 14.6848 15.1309 15.0461 14.4817 15.0461C14.1617 15.0461 13.8051 14.9558 13.5125 14.7751C13.2747 14.6216 13.0004 14.5674 12.7078 14.5674C11.8026 14.5674 11.0436 15.317 11.0162 16.2111C11.0162 17.2497 10.175 18.0625 9.12344 18.0625H7.87988C6.8192 18.0625 5.97796 17.2497 5.97796 16.2111C5.95968 15.317 5.20074 14.5674 4.2955 14.5674C3.99375 14.5674 3.71944 14.6216 3.49084 14.7751C3.19824 14.9558 2.83249 15.0461 2.5216 15.0461C1.86324 15.0461 1.23232 14.6848 0.893995 14.1068L0.26307 13.0231C-0.0752513 12.436 -0.093539 11.7316 0.244783 11.1717C0.391084 10.9007 0.665399 10.6298 0.976289 10.4582C1.23232 10.3317 1.39691 10.124 1.55235 9.88019C2.00954 9.1035 1.73523 8.08297 0.958001 7.62237C0.0527623 7.10759 -0.23984 5.96063 0.281358 5.06653L0.893995 4.00084C1.42434 3.10675 2.55817 2.79066 3.47255 3.31447C4.26807 3.74797 5.30132 3.45897 5.76766 2.69131C5.91396 2.43844 5.99625 2.1675 5.97796 1.89656C5.95968 1.54434 6.06026 1.21019 6.23399 0.93925C6.57231 0.379312 7.18495 0.0180625 7.85245 0H9.14173C9.81837 0 10.431 0.379312 10.7693 0.93925C10.9339 1.21019 11.0436 1.54434 11.0162 1.89656C10.9979 2.1675 11.0802 2.43844 11.2265 2.69131C11.6929 3.45897 12.7261 3.74797 13.5308 3.31447C14.436 2.79066 15.579 3.10675 16.1002 4.00084L16.7128 5.06653C17.2432 5.96063 16.9506 7.10759 16.0362 7.62237C15.259 8.08297 14.9846 9.1035 15.451 9.88019C15.5973 10.124 15.7619 10.3317 16.0179 10.4582ZM5.91406 9.04022C5.91406 10.4581 7.07533 11.587 8.51091 11.587C9.94649 11.587 11.0803 10.4581 11.0803 9.04022C11.0803 7.62231 9.94649 6.48438 8.51091 6.48438C7.07533 6.48438 5.91406 7.62231 5.91406 9.04022Z"
@@ -82,10 +84,10 @@
   </div>
   <div class="circles">
     <div class="circles__item circles__item_1">
-      <img data-src="img/circle2.png" alt="circle">
+      <img data-src="{% static 'auth/img/circle2.png' %}" alt="circle">
     </div>
     <div class="circles__item circles__item_2">
-      <img data-src="img/circle2.png" alt="circle">
+      <img data-src="{% static 'auth/img/circle2.png' %}" alt="circle">
     </div>
   </div>
   <form class="planning-course__block" action="#">
@@ -965,8 +967,8 @@
 <!-- jQuery JS -->
 <!-- slick JS -->
 <!-- wow JS -->
-<script src="js/wow.min.js"></script>
+<script src="{% static 'auth/js/wow.min.js' %}"></script>
 <!-- main JS -->
-<script src="js/main.js"></script>
+<script src="{% static 'auth/js/main.js' %}"></script>
 
 </html>

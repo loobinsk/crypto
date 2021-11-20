@@ -17,19 +17,20 @@ class CategoryBySkill(models.Model):
 		return self.name
 
 class Course(models.Model):
-	category_by_type = models.ForeignKey(CategoryByType, on_delete=models.CASCADE)
-	category_by_skill = models.ForeignKey(CategoryBySkill, on_delete=models.CASCADE)
+	category_by_type = models.ForeignKey(CategoryByType, on_delete=models.CASCADE, blank=True, null=True)
+	category_by_skill = models.ForeignKey(CategoryBySkill, on_delete=models.CASCADE, blank=True, null=True)
 	name = models.CharField(_('Название'),max_length=255)
 	author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='courses')
-	students = models.ManyToManyField(Student, related_name='students')
-	description = models.TextField(_('Описание'),)
-	price = models.IntegerField()
+	students = models.ManyToManyField(Student, related_name='students', blank=True, null=True)
+	description = models.TextField(_('Описание'), blank=True, null=True)
+	price = models.IntegerField(blank=True, null=True)
 	image = models.ImageField(_('Постер'), upload_to='course/posters', blank=True, null=True)
 	create_date = models.DateField(_('Дата создания'),auto_now_add=True)
 	update_date = models.DateField(_('Дата обновления'),auto_now=True)
-	hourse = models.IntegerField(_('Кол-во часов'),)
-	views = models.IntegerField(_('кол-во просмотров'),)
+	hourse = models.IntegerField(_('Кол-во часов'), default=0)
+	views = models.IntegerField(_('кол-во просмотров'), default=0)
 	active = models.BooleanField(default=False)
+	time_to_support_course = models.TextField(default=0)
 
 	def get_average_rating(self):
 		all_review = self.reviews.all()

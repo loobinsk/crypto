@@ -1,35 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 
+{% load static %}
+
 <head>
-  <title>SiteDevelope by Vlas</title>
+  <title>CryptoChip</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Description of website">
   <meta name="keywords" content="Website">
-  <link rel="shortcut icon" href="img/favicon.png" type="image/png">
+  <link rel="shortcut icon" href="{% static 'auth/img/favicon.png' %}" type="image/png">
   <!-- Gilroy FONT -->
-  <link rel="stylesheet" href="fonts/Gilroy/stylesheet.css">
+  <link rel="stylesheet" href="{% static 'auth/fonts/Gilroy/stylesheet.css' %}">
   <!-- NeueMachina FONT -->
-  <link rel="stylesheet" href="fonts/NeueMachina/stylesheet.css">
+  <link rel="stylesheet" href="{% static 'auth/fonts/NeueMachina/stylesheet.css' %}">
   <!-- Slick SLIDER -->
   <!-- Slick SLIDER -->
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/animate.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="{% static 'auth/css/normalize.css' %}">
+  <link rel="stylesheet" href="{% static 'auth/css/animate.css' %}">
+  <link rel="stylesheet" href="{% static 'auth/css/style.css' %}">
 </head>
 
 <body class="create-course">
   <div class="circles">
     <div class="circles__item circles__item_1">
-      <img data-src="img/circle2.png" alt="circle">
+      <img data-src="{% static 'auth/img/circle2.png' %}" alt="circle">
     </div>
     <div class="circles__item circles__item_2">
-      <img data-src="img/circle2.png" alt="circle">
+      <img data-src="{% static 'auth/img/circle2.png' %}" alt="circle">
     </div>
   </div>
   <div class="header-course">
-    <a class="header-course__logo" href="index.html">
+    <a class="header-course__logo" href="/">
       <svg width="22" height="25" viewBox="0 0 22 25" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect x="8.4375" width="1.80823" height="24.3107" rx="0.904117" fill="#04B8AD" />
         <rect x="5.62891" y="10.9492" width="1.80823" height="12.4567" rx="0.904117" fill="#04B8AD" />
@@ -77,23 +79,19 @@
         fill="#04B8AD" />
       </svg>
     </a>
-    <div class="header-course__steps">Шаг 1 из 4</div><a class="header-course__exit" href="input.html">Выйти</a>
+    <div class="header-course__steps">Шаг 1 из 4</div><a class="header-course__exit" href="/">Выйти</a>
   </div>
   <div class="header-line">
     <div class="header-line__progress" style="width: 25%"></div>
   </div>
-  <form class="create-course__block" action="">
+  <form class="create-course__block" action="." method="post">
+    {% csrf_token %}
     <div class="create-course__item create-course__item_active">
       <h2>Давайте определим, <br />курс какого типа вы планируете создать:</h2>
       <input type="radio" name="courseType" id="rdtp1">
       <label class="course__type" for="rdtp1">
         <div class="name">Курс</div>
         <p>Включайте в ваш курс видеолекции, опросы, тесты, упражнения по написанию кода и другие типы заданий, чтобы процесс обучения был увлекательным и интересным.</p>
-      </label>
-      <input type="radio" name="courseType" id="rdtp2">
-      <label class="course__type" for="rdtp2">
-        <div class="name">Практический тест</div>
-        <p>Помогите студентам подготовиться к экзаменам на получение сертификата: для этого подготовьте для них практические вопросы.</p>
       </label>
       <div class="buttons">
         <button class="next-step">Продолжить</button>
@@ -103,7 +101,7 @@
       <h2>У вас уже есть рабочее название курса?</h2>
       <p class="subtitle">Если вы пока не придумали оканчательное название своего курса, ничего страшного. Название можно будет отредактировать позже.</p>
       <div class="course__input input_max">
-        <input type="text" maxlength="60" placeholder="Например, “Figma с нуля”"><span>60</span>
+        <input name='name' type="text" maxlength="60" placeholder="Например, “Figma с нуля”"><span>60</span>
       </div>
       <div class="buttons">
         <button class="prev-step">Назад</button>
@@ -120,8 +118,10 @@
           </svg>
         </div>
         <ul class="select__body">
-          <li>asd</li>
-          <li>asdasda</li>
+          <li>Я пока не знаю</li>
+          {% for i in categoires %}
+            <li>{{ i.name }}</li>
+          {% endfor %}
         </ul>
       </div>
       <div class="buttons">
@@ -135,22 +135,22 @@
         <br />даже если у вас не очень много свободного времени.</p>
       <ul class="course__time">
         <li>
-          <input type="radio" name="liTime" id="rdTm1">
+          <input type="radio" name="liTime" value="0-2" id="rdTm1">
           <label for="rdTm1">Сейчас я очень занят <span>0-2 часа</span>
           </label>
         </li>
         <li>
-          <input type="radio" name="liTime" id="rdTm2">
+          <input type="radio" name="liTime" value="=2-4" id="rdTm2">
           <label for="rdTm2">Я буду уделять этому посильное время <span>2-4 часа</span>
           </label>
         </li>
         <li>
-          <input type="radio" name="liTime" id="rdTm3">
+          <input type="radio" name="liTime" value="5" id="rdTm3">
           <label for="rdTm3">У меня достаточно времени более <span>5 часов</span>
           </label>
         </li>
         <li>
-          <input type="radio" name="liTime" id="rdTm4">
+          <input type="radio" name="liTime" value="0" id="rdTm4">
           <label for="rdTm4">Ещё не решил(а), будет ли у меня время</label>
         </li>
       </ul>
@@ -164,8 +164,8 @@
 <!-- jQuery JS -->
 <!-- slick JS -->
 <!-- wow JS -->
-<script src="js/wow.min.js"></script>
+<script src="{% static 'auth/js/wow.min.js' %}"></script>
 <!-- main JS -->
-<script src="js/main.js"></script>
+<script src="{% static 'auth/js/main.js' %}"></script>
 
 </html>
